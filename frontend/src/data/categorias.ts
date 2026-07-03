@@ -1,0 +1,58 @@
+import { Categoria } from '@/types';
+
+export const categorias: Categoria[] = [
+  {
+    id: 1,
+    nombre: 'Tecnología',
+    slug: 'tecnologia',
+    descripcion: 'Libros de programación, inteligencia artificial, ciberseguridad y más.',
+    icono: 'HiComputerDesktop',
+    imagen: '/categorias/tecnologia.jpg',
+    productCount: 24,
+  },
+  {
+    id: 2,
+    nombre: 'Negocios',
+    slug: 'negocios',
+    descripcion: 'Emprendimiento, finanzas, liderazgo y gestión empresarial.',
+    icono: 'HiBriefcase',
+    imagen: '/categorias/negocios.jpg',
+    productCount: 18,
+  },
+  {
+    id: 3,
+    nombre: 'Salud',
+    slug: 'salud',
+    descripcion: 'Medicina, enfermería, nutrición y bienestar.',
+    icono: 'HiHeart',
+    imagen: '/categorias/salud.jpg',
+    productCount: 15,
+  },
+  {
+    id: 4,
+    nombre: 'Educación',
+    slug: 'educacion',
+    descripcion: 'Pedagogía, didáctica, investigación y ciencias de la educación.',
+    icono: 'HiAcademicCap',
+    imagen: '/categorias/educacion.jpg',
+    productCount: 20,
+  },
+  {
+    id: 5,
+    nombre: 'Diseño',
+    slug: 'diseno',
+    descripcion: 'Diseño gráfico, UX/UI, ilustración y arte digital.',
+    icono: 'HiPaintBrush',
+    imagen: '/categorias/diseno.jpg',
+    productCount: 12,
+  },
+  {
+    id: 6,
+    nombre: 'Marketing',
+    slug: 'marketing',
+    descripcion: 'Marketing digital, SEO, redes sociales y publicidad.',
+    icono: 'HiMegaphone',
+    imagen: '/categorias/marketing.jpg',
+    productCount: 14,
+  },
+];
