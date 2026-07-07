@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image'; 
 import { motion } from 'framer-motion';
 import { HiHeart, HiShoppingCart, HiStar } from 'react-icons/hi';
 import { productos } from '@/data/productos';
@@ -62,14 +63,24 @@ function ProductCard({ producto }: { producto: Producto }) {
     >
       <Link href={`/producto/${producto.id}`}>
         <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
-          <span className="text-gray-400 text-4xl font-bold opacity-20">{producto.titulo.charAt(0)}</span>
+          {producto.imagen ? (
+            <Image 
+              src={producto.imagen} 
+              alt={producto.titulo}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+            />
+          ) : (
+            <span className="text-gray-400 text-4xl font-bold opacity-20">{producto.titulo.charAt(0)}</span>
+          )}
+
           {discounted && (
-            <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+            <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
               -{discountPercent}%
             </span>
           )}
           {producto.masVendido && (
-            <span className="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">
+            <span className="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
               Más Vendido
             </span>
           )}
@@ -80,7 +91,7 @@ function ProductCard({ producto }: { producto: Producto }) {
         type="button"
         onClick={(e) => { e.preventDefault(); toggle(producto.id); }}
         aria-label={isFavorite(producto.id) ? 'Quitar de favoritos' : 'Agregar a favoritos'}
-        className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-all ${
+        className={`absolute top-3 right-3 w-9 h-9 rounded-full flex items-center justify-center shadow-md transition-all z-10 ${
           isFavorite(producto.id)
             ? 'bg-red-600 text-white'
             : 'bg-white/90 text-gray-600 hover:bg-white'
