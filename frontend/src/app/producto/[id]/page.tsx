@@ -1,17 +1,44 @@
 'use client';
 
-import { use } from 'react';
+import { use, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { HiChevronRight, HiHome } from 'react-icons/hi';
-import { productos } from '@/data/productos';
+import { Producto } from '@/types';
+import { productService } from '@/services/product.service';
 import ProductGallery from '@/components/product/ProductGallery';
 import ProductInfo from '@/components/product/ProductInfo';
 import RelatedProducts from '@/components/product/RelatedProducts';
+import Spinner from '@/components/ui/Spinner';
 
 export default function ProductoPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
   const productoId = parseInt(id, 10);
-  const producto = productos.find((p) => p.id === productoId);
+  const [producto, setProducto] = useState<Producto | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await productService.getById(productoId);
+        if (res.data.ok) {
+          setProducto(res.data.payload);
+        }
+      } catch {
+        setProducto(null);
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, [productoId]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <Spinner size="lg" />
+      </div>
+    );
+  }
 
   if (!producto) {
     return (
@@ -30,8 +57,6 @@ export default function ProductoPage({ params }: { params: Promise<{ id: string 
     );
   }
 
-  const categoriaSlug = producto.categoria.toLowerCase();
-
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
@@ -44,7 +69,7 @@ export default function ProductoPage({ params }: { params: Promise<{ id: string 
             <HiChevronRight className="w-4 h-4" />
             <Link href="/catalogo" className="hover:text-[#DC2626] transition-colors">Catálogo</Link>
             <HiChevronRight className="w-4 h-4" />
-            <Link href={`/catalogo?categoria=${categoriaSlug}`} className="hover:text-[#DC2626] transition-colors">
+            <Link href={`/catalogo?categoria=${producto.categoria.toLowerCase()}`} className="hover:text-[#DC2626] transition-colors">
               {producto.categoria}
             </Link>
             <HiChevronRight className="w-4 h-4" />
@@ -55,11 +80,10 @@ export default function ProductoPage({ params }: { params: Promise<{ id: string 
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <ProductGallery images={producto.imagenes || [producto.imagen]} title={producto.titulo} />
+          <ProductGallery images={producto.imagen ? [producto.imagen] : []} title={producto.titulo} />
           <ProductInfo producto={producto} />
         </div>
-
-        <RelatedProducts currentId={producto.id} categoriaId={producto.categoriaId} />
+        <RelatedProducts currentId={producto.id} categoria={producto.categoria} />
       </div>
     </div>
   );

@@ -5,7 +5,6 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { profileSchema, ProfileFormData } from '@/utils/validators';
 import { useAuthStore } from '@/store/auth-store';
-import { usuarios } from '@/data/usuarios';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import Toast from '@/components/ui/Toast';
@@ -26,26 +25,15 @@ export default function ProfileForm() {
   } = useForm<ProfileFormData>({
     resolver: zodResolver(profileSchema),
     defaultValues: {
-      nombres: usuario?.nombres ?? '',
-      apellidos: usuario?.apellidos ?? '',
-      email: usuario?.email ?? '',
-      telefono: usuario?.telefono ?? '',
-      documento: usuario?.documento ?? '',
-      pais: usuario?.pais ?? '',
-      departamento: usuario?.departamento ?? '',
-      ciudad: usuario?.ciudad ?? '',
-      direccion: usuario?.direccion ?? '',
-      codigoPostal: usuario?.codigoPostal ?? '',
+      nombreUsuario: usuario?.nombreUsuario ?? '',
+      correo: usuario?.correo ?? '',
     },
   });
 
   const onSubmit = async (data: ProfileFormData) => {
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    const updated = usuarios.find((u) => u.id === usuario?.id);
-    if (updated) {
-      const merged = { ...updated, ...data };
-      setUsuario(merged);
+    if (usuario) {
+      setUsuario({ ...usuario, ...data });
       setToast({ visible: true, message: 'Perfil actualizado correctamente', type: 'success' });
     } else {
       setToast({ visible: true, message: 'Error al actualizar el perfil', type: 'error' });
@@ -57,17 +45,9 @@ export default function ProfileForm() {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Input id="nombres" label="Nombres" error={errors.nombres?.message} {...register('nombres')} />
-          <Input id="apellidos" label="Apellidos" error={errors.apellidos?.message} {...register('apellidos')} />
-          <Input id="email" label="Email" type="email" error={errors.email?.message} {...register('email')} />
-          <Input id="telefono" label="Teléfono" error={errors.telefono?.message} {...register('telefono')} />
-          <Input id="documento" label="Documento" error={errors.documento?.message} {...register('documento')} />
-          <Input id="pais" label="País" error={errors.pais?.message} {...register('pais')} />
-          <Input id="departamento" label="Departamento" error={errors.departamento?.message} {...register('departamento')} />
-          <Input id="ciudad" label="Ciudad" error={errors.ciudad?.message} {...register('ciudad')} />
+          <Input id="nombreUsuario" label="Nombre de Usuario" error={errors.nombreUsuario?.message} {...register('nombreUsuario')} />
+          <Input id="correo" label="Correo Electrónico" type="email" error={errors.correo?.message} {...register('correo')} />
         </div>
-        <Input id="direccion" label="Dirección" error={errors.direccion?.message} {...register('direccion')} />
-        <Input id="codigoPostal" label="Código Postal" error={errors.codigoPostal?.message} {...register('codigoPostal')} />
         <div className="flex justify-end">
           <Button type="submit" loading={loading}>
             Guardar Cambios
@@ -76,7 +56,6 @@ export default function ProfileForm() {
       </form>
       <Toast
         message={toast.message}
-        type={toast.type}
         isVisible={toast.visible}
         onClose={() => setToast((prev) => ({ ...prev, visible: false }))}
       />

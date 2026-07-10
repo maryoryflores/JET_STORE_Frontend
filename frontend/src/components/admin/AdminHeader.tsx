@@ -51,7 +51,7 @@ export default function AdminHeader({ title, onToggleSidebar }: AdminHeaderProps
             className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
           >
             <div className="w-8 h-8 rounded-full bg-[#DC2626] text-white flex items-center justify-center text-sm font-semibold">
-              {usuario ? getInitials(`${usuario.nombres} ${usuario.apellidos}`) : 'U'}
+              {usuario ? getInitials(usuario.nombreUsuario) : 'U'}
             </div>
             <HiChevronDown className="w-4 h-4 text-gray-500" />
           </button>
@@ -59,9 +59,9 @@ export default function AdminHeader({ title, onToggleSidebar }: AdminHeaderProps
             <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-lg border border-gray-100 py-2 z-50">
               <div className="px-4 py-2 border-b border-gray-100">
                 <p className="text-sm font-semibold text-gray-900 truncate">
-                  {usuario?.nombres} {usuario?.apellidos}
+                  {usuario?.nombreUsuario}
                 </p>
-                <p className="text-xs text-gray-500 truncate">{usuario?.email}</p>
+                <p className="text-xs text-gray-500 truncate">{usuario?.correo}</p>
               </div>
               <button
                 type="button"

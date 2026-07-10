@@ -3,12 +3,12 @@
 import { useState } from 'react';
 import { HiAdjustments, HiX, HiStar } from 'react-icons/hi';
 import { cn } from '@/utils/cn';
-import { categorias } from '@/data/categorias';
 import Button from '@/components/ui/Button';
+import { Categoria } from '@/types';
 
 interface ProductFiltersProps {
-  selectedCategories: number[];
-  onCategoryChange: (categoryId: number) => void;
+  selectedCategories: string[];
+  onCategoryChange: (categoryName: string) => void;
   minPrice: string;
   maxPrice: string;
   onMinPriceChange: (value: string) => void;
@@ -17,6 +17,7 @@ interface ProductFiltersProps {
   onRatingChange: (rating: number) => void;
   onClear: () => void;
   className?: string;
+  categories?: Categoria[];
 }
 
 export default function ProductFilters({
@@ -30,6 +31,7 @@ export default function ProductFilters({
   onRatingChange,
   onClear,
   className,
+  categories = [],
 }: ProductFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -77,12 +79,12 @@ export default function ProductFilters({
           <div>
             <h4 className="text-sm font-semibold text-gray-900 mb-3">Categorías</h4>
             <div className="space-y-2">
-              {categorias.map((cat) => (
+              {categories.map((cat) => (
                 <label key={cat.id} className="flex items-center gap-3 cursor-pointer group">
                   <input
                     type="checkbox"
-                    checked={selectedCategories.includes(cat.id)}
-                    onChange={() => onCategoryChange(cat.id)}
+                    checked={selectedCategories.includes(cat.nombre)}
+                    onChange={() => onCategoryChange(cat.nombre)}
                     className="w-4 h-4 rounded border-gray-300 text-[#DC2626] focus:ring-[#DC2626]"
                   />
                   <span className="text-sm text-gray-600 group-hover:text-gray-900 transition-colors">

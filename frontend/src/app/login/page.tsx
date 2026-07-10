@@ -11,7 +11,8 @@ import { useAuthStore } from '@/store/auth-store';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import Alert from '@/components/ui/Alert';
-import { HiMail, HiLockClosed, HiEye, HiEyeOff } from 'react-icons/hi';
+import { HiUser, HiLockClosed, HiEye, HiEyeOff } from 'react-icons/hi';
+import Swal from 'sweetalert2';
 
 export default function LoginPage() {
   const router = useRouter();
@@ -32,19 +33,41 @@ export default function LoginPage() {
     setError('');
     setLoading(true);
     try {
-      const success = await login(data.email, data.password);
-      if (success) {
+      const result = await login(data.nombreUsuario, data.password);
+      if (result.success) {
         const user = useAuthStore.getState().usuario;
-        if (user?.rol === 'admin') {
+        if (user?.rol === 'ADMIN') {
           router.push('/admin');
         } else {
           router.push('/dashboard');
         }
       } else {
-        setError('Credenciales inválidas. Verifica tu correo y contraseña.');
+        setError(result.error || 'Credenciales inválidas.');
       }
     } catch {
       setError('Ocurrió un error al iniciar sesión. Intenta nuevamente.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGuestLogin = async () => {
+    setLoading(true);
+    try {
+      const result = await login('invitado', 'invitado123');
+      if (result.success) {
+        Swal.fire({
+          title: 'Modo Invitado',
+          text: 'Puedes navegar el sitio, pero necesitas crear una cuenta para comprar.',
+          icon: 'info',
+          confirmButtonColor: '#DC2626',
+        });
+        router.push('/catalogo');
+      } else {
+        setError('No se pudo acceder como invitado.');
+      }
+    } catch {
+      setError('Error al acceder como invitado.');
     } finally {
       setLoading(false);
     }
@@ -75,13 +98,13 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
             <Input
-              id="email"
-              label="Correo Electrónico"
-              type="email"
-              placeholder="tu@correo.com"
-              icon={<HiMail className="w-5 h-5" />}
-              error={errors.email?.message}
-              {...register('email')}
+              id="nombreUsuario"
+              label="Nombre de Usuario"
+              type="text"
+              placeholder="Tu nombre de usuario"
+              icon={<HiUser className="w-5 h-5" />}
+              error={errors.nombreUsuario?.message}
+              {...register('nombreUsuario')}
             />
 
             <div className="relative">
@@ -104,19 +127,28 @@ export default function LoginPage() {
               </button>
             </div>
 
-            <div className="flex justify-end">
-              <Link
-                href="/contacto"
-                className="text-sm text-[#DC2626] hover:text-[#B91C1C] transition-colors"
-              >
-                ¿Olvidaste tu contraseña?
-              </Link>
-            </div>
-
             <Button type="submit" fullWidth loading={loading}>
               Ingresar
             </Button>
           </form>
+
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-200" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="bg-white px-3 text-gray-400">o</span>
+            </div>
+          </div>
+
+          <button
+            type="button"
+            onClick={handleGuestLogin}
+            disabled={loading}
+            className="w-full px-6 py-3 border-2 border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 hover:border-gray-300 transition-colors disabled:opacity-50"
+          >
+            Entrar como Invitado
+          </button>
 
           <p className="text-center text-sm text-gray-500 mt-6">
             ¿No tienes cuenta?{' '}

@@ -1,70 +1,59 @@
 'use client';
 
-import { useState, useMemo } from 'react';
-import { usuarios } from '@/data/usuarios';
+import { useState, useMemo, useEffect } from 'react';
+import { adminService } from '@/services/admin.service';
 import Table from '@/components/ui/Table';
 import Badge from '@/components/ui/Badge';
-import Select from '@/components/ui/Select';
 import Input from '@/components/ui/Input';
-import { formatDate } from '@/utils/format';
-import { Usuario } from '@/types';
 import { HiSearch } from 'react-icons/hi';
+
+interface BackendUsuario {
+  id: number;
+  nombreUsuario: string;
+  correo: string;
+  rol: string;
+}
 
 export default function UsersTable() {
   const [search, setSearch] = useState('');
-  const [localUsuarios] = useState(usuarios);
-  const [roles, setRoles] = useState<Record<number, 'cliente' | 'admin'>>(
-    Object.fromEntries(usuarios.map((u) => [u.id, u.rol]))
-  );
+  const [usuarios, setUsuarios] = useState<BackendUsuario[]>([]);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await adminService.getUsers();
+        if (res.data.ok) setUsuarios(res.data.payload);
+      } catch {
+        // ignore
+      }
+    };
+    load();
+  }, []);
 
   const filtered = useMemo(() => {
-    if (!search.trim()) return localUsuarios;
+    if (!search.trim()) return usuarios;
     const q = search.toLowerCase();
-    return localUsuarios.filter(
+    return usuarios.filter(
       (u) =>
-        `${u.nombres} ${u.apellidos}`.toLowerCase().includes(q) ||
-        u.email.toLowerCase().includes(q)
+        u.nombreUsuario.toLowerCase().includes(q) ||
+        u.correo.toLowerCase().includes(q)
     );
-  }, [search, localUsuarios]);
-
-  const handleRoleChange = (id: number, rol: string) => {
-    setRoles((prev) => ({ ...prev, [id]: rol as 'cliente' | 'admin' }));
-  };
+  }, [search, usuarios]);
 
   const columns = [
     {
-      key: 'nombre',
-      header: 'Nombre',
-      render: (item: Usuario) => `${item.nombres} ${item.apellidos}`,
+      key: 'nombreUsuario',
+      header: 'Usuario',
+      render: (item: BackendUsuario) => item.nombreUsuario,
     },
-    { key: 'email', header: 'Email' },
+    { key: 'correo', header: 'Email' },
     {
       key: 'rol',
       header: 'Rol',
-      render: (item: Usuario) => (
-        <Badge variant={item.rol === 'admin' ? 'info' : 'default'}>
-          {item.rol === 'admin' ? 'Admin' : 'Cliente'}
+      render: (item: BackendUsuario) => (
+        <Badge variant={item.rol === 'ADMIN' ? 'info' : 'default'}>
+          {item.rol === 'ADMIN' ? 'Admin' : 'Cliente'}
         </Badge>
-      ),
-    },
-    {
-      key: 'fechaRegistro',
-      header: 'Registro',
-      render: (item: Usuario) => formatDate(item.fechaRegistro),
-    },
-    {
-      key: 'acciones',
-      header: 'Acciones',
-      render: (item: Usuario) => (
-        <Select
-          value={roles[item.id]}
-          onChange={(e) => handleRoleChange(item.id, e.target.value)}
-          options={[
-            { value: 'cliente', label: 'Cliente' },
-            { value: 'admin', label: 'Admin' },
-          ]}
-          className="w-32"
-        />
       ),
     },
   ];

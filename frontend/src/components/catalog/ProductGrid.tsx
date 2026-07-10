@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiHeart, HiShoppingCart, HiPhotograph, HiStar } from 'react-icons/hi';
@@ -9,8 +8,10 @@ import { cn } from '@/utils/cn';
 import { formatCurrency, truncateText } from '@/utils/format';
 import { useCartStore } from '@/store/cart-store';
 import { useFavoritesStore } from '@/store/favorites-store';
+import { useAuthStore } from '@/store/auth-store';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
+import Swal from 'sweetalert2';
 
 interface ProductGridProps {
   products: Producto[];
@@ -20,6 +21,25 @@ export default function ProductGrid({ products }: ProductGridProps) {
   const agregar = useCartStore((s) => s.agregar);
   const toggle = useFavoritesStore((s) => s.toggle);
   const isFavorite = useFavoritesStore((s) => s.isFavorite);
+  const { isAuthenticated } = useAuthStore();
+
+  const handleAddToCart = (producto: Producto) => {
+    if (!isAuthenticated) {
+      Swal.fire({
+        title: 'Inicia sesión',
+        text: 'Necesitas una cuenta para agregar productos al carrito.',
+        icon: 'info',
+        confirmButtonColor: '#DC2626',
+        confirmButtonText: 'Ir a Login',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/login';
+        }
+      });
+      return;
+    }
+    agregar(producto);
+  };
 
   if (products.length === 0) {
     return (
@@ -41,21 +61,15 @@ export default function ProductGrid({ products }: ProductGridProps) {
           transition={{ duration: 0.3, delay: index * 0.05 }}
         >
           <div className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
+            <div className="relative aspect-[4/3] bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center overflow-hidden">
               {producto.imagen ? (
-                <Image
-                  src={producto.imagen}
-                  alt={producto.titulo}
-                  width={300}
-                  height={225}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                <img src={producto.imagen} alt={producto.titulo} className="absolute inset-0 w-full h-full object-cover" />
               ) : (
-                <HiPhotograph className="w-12 h-12 text-gray-300" />
+                <span className="text-red-300 text-4xl font-bold opacity-30">{producto.titulo.charAt(0)}</span>
               )}
-              {producto.oferta && producto.descuento && (
+              {producto.stock <= 0 && (
                 <Badge variant="danger" className="absolute top-3 left-3">
-                  -{producto.descuento}%
+                  Sin Stock
                 </Badge>
               )}
               <button
@@ -84,23 +98,19 @@ export default function ProductGrid({ products }: ProductGridProps) {
               <p className="text-xs text-gray-500">{producto.autor}</p>
               <div className="flex items-center gap-1">
                 <HiStar className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                <span className="text-sm font-medium text-gray-700">{producto.rating}</span>
-                <span className="text-xs text-gray-400">({producto.ratingCount})</span>
+                <span className="text-sm font-medium text-gray-700">4.0</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="text-lg font-bold text-gray-900">{formatCurrency(producto.precio)}</span>
-                {producto.precioOriginal && producto.precioOriginal > producto.precio && (
-                  <span className="text-sm text-gray-400 line-through">{formatCurrency(producto.precioOriginal)}</span>
-                )}
               </div>
               <Button
                 fullWidth
                 size="sm"
                 icon={<HiShoppingCart className="w-4 h-4" />}
-                onClick={() => agregar(producto)}
-                disabled={!producto.stock}
+                onClick={() => handleAddToCart(producto)}
+                disabled={producto.stock <= 0}
               >
-                {producto.stock ? 'Agregar al Carrito' : 'Sin Stock'}
+                {producto.stock > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
               </Button>
             </div>
           </div>

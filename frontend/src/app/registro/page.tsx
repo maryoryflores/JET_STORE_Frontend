@@ -7,17 +7,19 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { registerSchema, RegisterFormData } from '@/utils/validators';
+import { useAuthStore } from '@/store/auth-store';
 import Input from '@/components/ui/Input';
 import Button from '@/components/ui/Button';
 import Toast from '@/components/ui/Toast';
-import { HiMail, HiLockClosed, HiEye, HiEyeOff, HiUser, HiPhone, HiIdentification } from 'react-icons/hi';
+import { HiMail, HiLockClosed, HiEye, HiEyeOff, HiUser } from 'react-icons/hi';
 
 export default function RegisterPage() {
   const router = useRouter();
+  const registerUser = useAuthStore((s) => s.register);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [toast, setToast] = useState({ visible: false, message: '' });
+  const [toast, setToast] = useState({ visible: false, message: '', type: 'success' as 'success' | 'error' });
 
   const {
     register,
@@ -27,12 +29,25 @@ export default function RegisterPage() {
     resolver: zodResolver(registerSchema),
   });
 
-  const onSubmit = async () => {
+  const onSubmit = async (data: RegisterFormData) => {
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
-    setToast({ visible: true, message: 'Cuenta creada exitosamente' });
-    setTimeout(() => router.push('/login'), 2000);
+    try {
+      const result = await registerUser({
+        nombreUsuario: data.nombreUsuario,
+        correo: data.correo,
+        password: data.password,
+      });
+      if (result.success) {
+        setToast({ visible: true, message: 'Cuenta creada exitosamente', type: 'success' });
+        setTimeout(() => router.push('/login'), 2000);
+      } else {
+        setToast({ visible: true, message: result.error || 'Error al crear la cuenta', type: 'error' });
+      }
+    } catch {
+      setToast({ visible: true, message: 'Error al conectar con el servidor', type: 'error' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -59,52 +74,23 @@ export default function RegisterPage() {
           </div>
 
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <Input
-                id="nombres"
-                label="Nombres"
-                placeholder="Juan"
-                icon={<HiUser className="w-5 h-5" />}
-                error={errors.nombres?.message}
-                {...register('nombres')}
-              />
-              <Input
-                id="apellidos"
-                label="Apellidos"
-                placeholder="Pérez"
-                icon={<HiUser className="w-5 h-5" />}
-                error={errors.apellidos?.message}
-                {...register('apellidos')}
-              />
-            </div>
+            <Input
+              id="nombreUsuario"
+              label="Nombre de Usuario"
+              placeholder="juanperez"
+              icon={<HiUser className="w-5 h-5" />}
+              error={errors.nombreUsuario?.message}
+              {...register('nombreUsuario')}
+            />
 
             <Input
-              id="email"
+              id="correo"
               label="Correo Electrónico"
               type="email"
               placeholder="tu@correo.com"
               icon={<HiMail className="w-5 h-5" />}
-              error={errors.email?.message}
-              {...register('email')}
-            />
-
-            <Input
-              id="telefono"
-              label="Teléfono"
-              type="tel"
-              placeholder="+51 999 888 777"
-              icon={<HiPhone className="w-5 h-5" />}
-              error={errors.telefono?.message}
-              {...register('telefono')}
-            />
-
-            <Input
-              id="documento"
-              label="Documento"
-              placeholder="12345678"
-              icon={<HiIdentification className="w-5 h-5" />}
-              error={errors.documento?.message}
-              {...register('documento')}
+              error={errors.correo?.message}
+              {...register('correo')}
             />
 
             <div className="relative">

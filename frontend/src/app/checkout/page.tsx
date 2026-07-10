@@ -5,20 +5,21 @@ import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { HiChevronRight, HiHome } from 'react-icons/hi';
 import { useCartStore } from '@/store/cart-store';
-import CheckoutForm from '@/components/checkout/CheckoutForm';
+import { useAuthStore } from '@/store/auth-store';
+import { paymentService } from '@/services/payment.service';
 import PaymentMethods from '@/components/checkout/PaymentMethods';
 import OrderSummary from '@/components/checkout/OrderSummary';
-import type { CheckoutFormData } from '@/utils/validators';
+import Swal from 'sweetalert2';
 
 const steps = [
-  { id: 1, label: 'Datos del Comprador' },
-  { id: 2, label: 'Método de Pago' },
-  { id: 3, label: 'Confirmación' },
+  { id: 1, label: 'Método de Pago' },
+  { id: 2, label: 'Confirmación' },
 ];
 
 export default function CheckoutPage() {
   const router = useRouter();
   const { items, subtotal, vaciar } = useCartStore();
+  const { usuario } = useAuthStore();
   const [step, setStep] = useState(1);
   const [paymentMethod, setPaymentMethod] = useState('');
   const [loading, setLoading] = useState(false);
@@ -31,23 +32,58 @@ export default function CheckoutPage() {
 
   if (items.length === 0) return null;
 
-  const handleBuyerSubmit = (data: CheckoutFormData) => {
-    void data;
-    setStep(2);
-  };
-
   const handlePaymentSelect = (method: string) => {
     setPaymentMethod(method);
   };
 
-  const handleConfirm = () => {
+  const metodoMap: Record<string, string> = {
+    visa: 'TARJETA',
+    mastercard: 'TARJETA',
+    yape: 'YAPE',
+    plin: 'PLIN',
+    transferencia: 'TARJETA',
+    paypal: 'TARJETA',
+  };
+
+  const handleConfirm = async () => {
+    if (!usuario) return;
     setLoading(true);
-    setTimeout(() => {
-      vaciar();
-      sessionStorage.setItem('jetstore-checkout-completed', 'true');
+    try {
+      const metodoBackend = metodoMap[paymentMethod] || 'TARJETA';
+      const pagoRes = await paymentService.processPayment(usuario.id, metodoBackend);
+      if (pagoRes.data.ok) {
+        const pagoId = pagoRes.data.payload.pagoId;
+        const confirmRes = await paymentService.confirmPayment(pagoId, `REF-${Date.now()}`);
+        if (confirmRes.data.ok) {
+          vaciar();
+          sessionStorage.setItem('jetstore-checkout-completed', 'true');
+          Swal.fire({
+            title: '¡Compra Exitosa!',
+            text: 'Tu pago ha sido procesado correctamente.',
+            icon: 'success',
+            confirmButtonColor: '#DC2626',
+          });
+          router.push('/checkout/success');
+        } else {
+          Swal.fire('Error', confirmRes.data.mensaje, 'error');
+        }
+      } else {
+        Swal.fire('Error', pagoRes.data.mensaje, 'error');
+      }
+    } catch {
+      Swal.fire('Error', 'No se pudo procesar el pago', 'error');
+    } finally {
       setLoading(false);
-      router.push('/checkout/success');
-    }, 1500);
+    }
+  };
+
+  const metodoLabels: Record<string, string> = {
+    visa: 'Visa',
+    mastercard: 'Mastercard',
+    yape: 'Yape',
+    plin: 'Plin',
+    transferencia: 'Transferencia Bancaria',
+    paypal: 'PayPal',
   };
 
   return (
@@ -105,12 +141,44 @@ export default function CheckoutPage() {
         </div>
 
         <div className="mb-8">
-          {step === 1 && <CheckoutForm onSubmit={handleBuyerSubmit} />}
-          {step === 2 && (
+          {step === 1 && (
             <div className="space-y-6">
               <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
                 <h3 className="text-lg font-bold text-gray-900 mb-4">Método de Pago</h3>
                 <PaymentMethods selected={paymentMethod} onSelect={handlePaymentSelect} />
+              </div>
+              <button
+                type="button"
+                onClick={() => setStep(2)}
+                disabled={!paymentMethod}
+                className="w-full px-6 py-3 bg-[#DC2626] text-white rounded-xl text-sm font-medium hover:bg-[#B91C1C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Continuar
+              </button>
+            </div>
+          )}
+          {step === 2 && (
+            <div className="space-y-6">
+              <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-4">Resumen del Pedido</h3>
+                <div className="space-y-3">
+                  {items.map((item) => (
+                    <div key={item.itemId} className="flex justify-between text-sm">
+                      <span className="text-gray-600">{item.titulo} x{item.cantidad}</span>
+                      <span className="font-medium text-gray-900">S/ {(item.subtotal).toFixed(2)}</span>
+                    </div>
+                  ))}
+                  <div className="border-t pt-3 mt-3">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Método de pago:</span>
+                      <span className="font-medium">{metodoLabels[paymentMethod] || paymentMethod}</span>
+                    </div>
+                    <div className="flex justify-between mt-2">
+                      <span className="text-lg font-bold text-gray-900">Total:</span>
+                      <span className="text-lg font-bold text-[#DC2626]">S/ {subtotal().toFixed(2)}</span>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="flex gap-3">
                 <button
@@ -122,31 +190,13 @@ export default function CheckoutPage() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => setStep(3)}
-                  disabled={!paymentMethod}
-                  className="flex-1 px-6 py-3 bg-[#DC2626] text-white rounded-xl text-sm font-medium hover:bg-[#B91C1C] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  onClick={handleConfirm}
+                  disabled={loading}
+                  className="flex-1 px-6 py-3 bg-[#DC2626] text-white rounded-xl text-sm font-medium hover:bg-[#B91C1C] transition-colors disabled:opacity-50"
                 >
-                  Continuar
+                  {loading ? 'Procesando...' : 'Confirmar Compra'}
                 </button>
               </div>
-            </div>
-          )}
-          {step === 3 && (
-            <div className="space-y-6">
-              <OrderSummary
-                items={items}
-                subtotal={subtotal()}
-                metodo={paymentMethod}
-                onConfirm={handleConfirm}
-                loading={loading}
-              />
-              <button
-                type="button"
-                onClick={() => setStep(2)}
-                className="w-full px-6 py-3 rounded-xl border border-gray-200 text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
-              >
-                Volver al Método de Pago
-              </button>
             </div>
           )}
         </div>

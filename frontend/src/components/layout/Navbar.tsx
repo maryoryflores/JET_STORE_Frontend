@@ -61,24 +61,28 @@ export default function Navbar() {
           </div>
 
           <div className="hidden lg:flex items-center gap-4">
-            <Link
-              href="/carrito"
-              className="relative p-2 text-gray-300 hover:text-white transition-colors"
-            >
-              <HiShoppingCart className="w-6 h-6" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            {isAuthenticated && (
+              <>
+                <Link
+                  href="/carrito"
+                  className="relative p-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <HiShoppingCart className="w-6 h-6" />
+                  {totalItems > 0 && (
+                    <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                      {totalItems}
+                    </span>
+                  )}
+                </Link>
 
-            <Link
-              href="/dashboard/favoritos"
-              className="p-2 text-gray-300 hover:text-white transition-colors"
-            >
-              <HiHeart className="w-6 h-6" />
-            </Link>
+                <Link
+                  href="/dashboard/favoritos"
+                  className="p-2 text-gray-300 hover:text-white transition-colors"
+                >
+                  <HiHeart className="w-6 h-6" />
+                </Link>
+              </>
+            )}
 
             {isAuthenticated && usuario ? (
               <div className="relative" ref={dropdownRef}>
@@ -89,7 +93,7 @@ export default function Navbar() {
                   className="flex items-center gap-2 p-2 text-gray-300 hover:text-white transition-colors"
                 >
                   <HiUser className="w-6 h-6" />
-                  <span className="text-sm font-medium">{usuario.nombres.split(' ')[0]}</span>
+                  <span className="text-sm font-medium">{usuario.nombreUsuario}</span>
                   <HiChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 <AnimatePresence>
@@ -102,31 +106,43 @@ export default function Navbar() {
                       className="absolute right-0 mt-2 w-56 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl py-2"
                     >
                       <div className="px-4 py-3 border-b border-gray-700">
-                        <p className="text-sm font-medium text-white">{usuario.nombres} {usuario.apellidos}</p>
-                        <p className="text-xs text-gray-400 truncate">{usuario.email}</p>
+                        <p className="text-sm font-medium text-white">{usuario.nombreUsuario}</p>
+                        <p className="text-xs text-gray-400 truncate">{usuario.correo || 'Sesión activa'}</p>
                       </div>
-                      <Link
-                        href="/dashboard"
-                        className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
-                        onClick={() => setIsDropdownOpen(false)}
+                      {usuario.rol === 'ADMIN' ? (
+                        <Link
+                          href="/admin"
+                          className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                          onClick={() => setIsDropdownOpen(false)}
+                        >
+                          Panel Admin
+                        </Link>
+                      ) : (
+                        <>
+                          <Link
+                            href="/dashboard"
+                            className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                            onClick={() => setIsDropdownOpen(false)}
+                          >
+                            Mi Cuenta
+                          </Link>
+                          <Link
+                            href="/dashboard/compras"
+                            className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
+                            onClick={() => setIsDropdownOpen(false)}
+                          >
+                            Mis Compras
+                          </Link>
+                        </>
+                      )}
+                      <button
+                        type="button"
+                        onClick={() => { logout(); setIsDropdownOpen(false); }}
+                        className="w-full text-left px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-red-500 transition-colors flex items-center gap-2"
                       >
-                        Mi Cuenta
-                      </Link>
-                      <Link
-                        href="/dashboard/compras"
-                        className="block px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors"
-                        onClick={() => setIsDropdownOpen(false)}
-                      >
-                        Mis Compras
-                      </Link>
-                    <button
-                      type="button"
-                      onClick={() => { logout(); setIsDropdownOpen(false); }}
-                      className="w-full text-left px-4 py-2.5 text-sm text-gray-300 hover:bg-gray-800 hover:text-red-500 transition-colors flex items-center gap-2"
-                    >
-                      <HiLogout className="w-4 h-4" />
-                      Cerrar Sesión
-                    </button>
+                        <HiLogout className="w-4 h-4" />
+                        Cerrar Sesión
+                      </button>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -142,14 +158,16 @@ export default function Navbar() {
           </div>
 
           <div className="flex lg:hidden items-center gap-3">
-            <Link href="/carrito" className="relative p-2 text-gray-300">
-              <HiShoppingCart className="w-6 h-6" />
-              {totalItems > 0 && (
-                <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            {isAuthenticated && (
+              <Link href="/carrito" className="relative p-2 text-gray-300">
+                <HiShoppingCart className="w-6 h-6" />
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+            )}
             <button
               type="button"
               onClick={() => setIsMobileOpen(!isMobileOpen)}
@@ -188,40 +206,54 @@ export default function Navbar() {
               ))}
             </div>
             <div className="px-4 pb-4 border-t border-white/10 pt-4 space-y-2">
-              <Link
-                href="/dashboard/favoritos"
-                onClick={() => setIsMobileOpen(false)}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
-              >
-                <HiHeart className="w-5 h-5" />
-                Favoritos
-              </Link>
+              {isAuthenticated && (
+                <Link
+                  href="/dashboard/favoritos"
+                  onClick={() => setIsMobileOpen(false)}
+                  className="flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
+                >
+                  <HiHeart className="w-5 h-5" />
+                  Favoritos
+                </Link>
+              )}
               {isAuthenticated && usuario ? (
                 <>
                   <div className="px-4 py-3 flex items-center gap-3">
                     <HiUser className="w-5 h-5 text-gray-400" />
                     <div>
-                      <p className="text-sm font-medium text-white">{usuario.nombres} {usuario.apellidos}</p>
-                      <p className="text-xs text-gray-400">{usuario.email}</p>
+                      <p className="text-sm font-medium text-white">{usuario.nombreUsuario}</p>
+                      <p className="text-xs text-gray-400">{usuario.correo || 'Sesión activa'}</p>
                     </div>
                   </div>
-                  <Link
-                    href="/dashboard"
-                    onClick={() => setIsMobileOpen(false)}
-                    className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
-                  >
-                    Mi Cuenta
-                  </Link>
-                  <Link
-                    href="/dashboard/compras"
-                    onClick={() => setIsMobileOpen(false)}
-                    className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
-                  >
-                    Mis Compras
-                  </Link>
+                  {usuario.rol === 'ADMIN' ? (
+                    <Link
+                      href="/admin"
+                      onClick={() => setIsMobileOpen(false)}
+                      className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
+                    >
+                      Panel Admin
+                    </Link>
+                  ) : (
+                    <>
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setIsMobileOpen(false)}
+                        className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
+                      >
+                        Mi Cuenta
+                      </Link>
+                      <Link
+                        href="/dashboard/compras"
+                        onClick={() => setIsMobileOpen(false)}
+                        className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 hover:bg-gray-900 transition-colors"
+                      >
+                        Mis Compras
+                      </Link>
+                    </>
+                  )}
                   <button
                     type="button"
-                    onClick={() => logout()}
+                    onClick={() => { logout(); setIsMobileOpen(false); }}
                     className="flex items-center gap-3 w-full px-4 py-3 rounded-lg text-sm font-medium text-red-400 hover:bg-gray-900 transition-colors"
                   >
                     <HiLogout className="w-5 h-5" />

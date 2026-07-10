@@ -1,16 +1,25 @@
 import api from './api';
+import { CarritoItem } from '@/types';
+
+interface ApiResponse<T> {
+  ok: boolean;
+  mensaje: string;
+  payload: T;
+}
+
+interface CarritoResponse {
+  carritoId: number;
+  items: CarritoItem[];
+  total: number;
+}
 
 export const cartService = {
-  getCart: () => api.get('/carrito'),
+  getCart: (usuarioId: number) =>
+    api.get<ApiResponse<CarritoResponse>>(`/carrito/ver/${usuarioId}`),
 
-  addItem: (productoId: number, cantidad: number) =>
-    api.post('/carrito', { productoId, cantidad }),
+  addItem: (usuarioId: number, libroId: number, cantidad: number = 1) =>
+    api.post<ApiResponse<CarritoResponse>>('/carrito/agregar', { usuarioId, libroId, cantidad }),
 
-  updateItem: (productoId: number, cantidad: number) =>
-    api.put(`/carrito/${productoId}`, { cantidad }),
-
-  removeItem: (productoId: number) =>
-    api.delete(`/carrito/${productoId}`),
-
-  clearCart: () => api.delete('/carrito'),
+  removeItem: (usuarioId: number, libroId: number) =>
+    api.delete<ApiResponse<CarritoResponse>>(`/carrito/eliminar/${usuarioId}/${libroId}`),
 };

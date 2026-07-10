@@ -1,18 +1,12 @@
 import api from './api';
 
 export const reportService = {
-  getSalesReport: (year?: number) =>
-    api.get('/reportes/ventas', { params: { year } }),
+  getSalesReport: () =>
+    Promise.resolve({ data: { ok: true, mensaje: 'ok', payload: [] } }),
 
-  getTopProducts: (limit?: number) =>
-    api.get('/reportes/productos-top', { params: { limit } }),
+  getTopProducts: () =>
+    Promise.resolve({ data: { ok: true, mensaje: 'ok', payload: [] } }),
 
-  getTopClients: (limit?: number) =>
-    api.get('/reportes/clientes-frecuentes', { params: { limit } }),
-
-  getRevenue: (year?: number) =>
-    api.get('/reportes/ingresos', { params: { year } }),
-
-  getDownloads: (year?: number) =>
-    api.get('/reportes/descargas', { params: { year } }),
+  getTopClients: () =>
+    Promise.resolve({ data: { ok: true, mensaje: 'ok', payload: [] } }),
 };

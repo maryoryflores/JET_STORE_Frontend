@@ -6,9 +6,11 @@ import { Producto } from '@/types';
 import { cn } from '@/utils/cn';
 import { formatCurrency } from '@/utils/format';
 import { useCartStore } from '@/store/cart-store';
+import { useAuthStore } from '@/store/auth-store';
 import { useFavoritesStore } from '@/store/favorites-store';
 import Button from '@/components/ui/Button';
 import Badge from '@/components/ui/Badge';
+import Swal from 'sweetalert2';
 
 interface ProductInfoProps {
   producto: Producto;
@@ -19,8 +21,23 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
   const agregar = useCartStore((s) => s.agregar);
   const toggle = useFavoritesStore((s) => s.toggle);
   const isFavorite = useFavoritesStore((s) => s.isFavorite);
+  const { isAuthenticated } = useAuthStore();
 
   const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      Swal.fire({
+        title: 'Inicia sesión',
+        text: 'Necesitas una cuenta para agregar productos al carrito.',
+        icon: 'info',
+        confirmButtonColor: '#DC2626',
+        confirmButtonText: 'Ir a Login',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/login';
+        }
+      });
+      return;
+    }
     agregar(producto, cantidad);
     setCantidad(1);
   };
@@ -54,28 +71,17 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
               key={star}
               className={cn(
                 'w-5 h-5',
-                star <= Math.round(producto.rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300',
+                star <= 4 ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300',
               )}
             />
           ))}
         </div>
-        <span className="text-sm font-medium text-gray-700">{producto.rating}</span>
-        <span className="text-sm text-gray-400">({producto.ratingCount} reseñas)</span>
+        <span className="text-sm font-medium text-gray-700">4.0</span>
       </div>
 
       <div className="flex items-baseline gap-3">
         <span className="text-3xl font-bold text-[#DC2626]">{formatCurrency(producto.precio)}</span>
-        {producto.precioOriginal && producto.precioOriginal > producto.precio && (
-          <>
-            <span className="text-lg text-gray-400 line-through">{formatCurrency(producto.precioOriginal)}</span>
-            <Badge variant="danger" size="md">
-              -{producto.descuento ?? 0}% OFF
-            </Badge>
-          </>
-        )}
       </div>
-
-      <p className="text-gray-600 leading-relaxed">{producto.descripcion}</p>
 
       <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-xl">
         <div>
@@ -83,26 +89,13 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
           <p className="text-sm font-medium text-gray-900">{producto.formato}</p>
         </div>
         <div>
-          <span className="text-xs text-gray-500">Páginas</span>
-          <p className="text-sm font-medium text-gray-900">{producto.paginas}</p>
+          <span className="text-xs text-gray-500">Stock</span>
+          <p className="text-sm font-medium text-gray-900">{producto.stock > 0 ? `${producto.stock} disponibles` : 'Agotado'}</p>
         </div>
-        <div>
-          <span className="text-xs text-gray-500">Idioma</span>
-          <p className="text-sm font-medium text-gray-900">{producto.idioma}</p>
-        </div>
-        {producto.ISBN && (
-          <div>
-            <span className="text-xs text-gray-500">ISBN</span>
-            <p className="text-sm font-medium text-gray-900">{producto.ISBN}</p>
-          </div>
-        )}
       </div>
 
       <div className="flex items-center gap-2 flex-wrap">
         <Badge variant="info">{producto.categoria}</Badge>
-        {producto.tags.map((tag) => (
-          <Badge key={tag} variant="default">{tag}</Badge>
-        ))}
       </div>
 
       <div className="flex items-center gap-4">
@@ -131,10 +124,10 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
           size="lg"
           icon={<HiShoppingCart className="w-5 h-5" />}
           onClick={handleAddToCart}
-          disabled={!producto.stock}
+          disabled={producto.stock <= 0}
           className="flex-1"
         >
-          {producto.stock ? 'Agregar al Carrito' : 'Sin Stock'}
+          {producto.stock > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
         </Button>
       </div>
     </div>

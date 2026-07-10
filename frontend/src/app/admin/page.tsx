@@ -1,11 +1,25 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import { productService } from '@/services/product.service';
 import StatsCards from '@/components/admin/StatsCards';
 import Charts from '@/components/admin/Charts';
-import { pedidos } from '@/data/pedidos';
+import { Producto } from '@/types';
 
 export default function AdminDashboardPage() {
-  const recentOrders = pedidos.slice(0, 5);
+  const [productos, setProductos] = useState<Producto[]>([]);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await productService.getAll();
+        if (res.data.ok) setProductos(res.data.payload);
+      } catch {
+        // ignore
+      }
+    };
+    load();
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -13,35 +27,29 @@ export default function AdminDashboardPage() {
       <Charts />
 
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
-        <h2 className="text-lg font-bold text-gray-900 mb-4">Pedidos Recientes</h2>
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Libros Registrados</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-100">
-                <th className="text-left py-3 px-4 font-semibold text-gray-500">N° Pedido</th>
-                <th className="text-left py-3 px-4 font-semibold text-gray-500">Cliente</th>
-                <th className="text-left py-3 px-4 font-semibold text-gray-500">Fecha</th>
-                <th className="text-left py-3 px-4 font-semibold text-gray-500">Estado</th>
-                <th className="text-right py-3 px-4 font-semibold text-gray-500">Total</th>
+                <th className="text-left py-3 px-4 font-semibold text-gray-500">Título</th>
+                <th className="text-left py-3 px-4 font-semibold text-gray-500">Autor</th>
+                <th className="text-left py-3 px-4 font-semibold text-gray-500">Categoría</th>
+                <th className="text-left py-3 px-4 font-semibold text-gray-500">Formato</th>
+                <th className="text-right py-3 px-4 font-semibold text-gray-500">Stock</th>
+                <th className="text-right py-3 px-4 font-semibold text-gray-500">Precio</th>
               </tr>
             </thead>
             <tbody>
-              {recentOrders.map((pedido) => (
-                <tr key={pedido.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
-                  <td className="py-3 px-4 font-medium text-gray-900">{pedido.numeroPedido}</td>
-                  <td className="py-3 px-4 text-gray-600">{pedido.cliente}</td>
-                  <td className="py-3 px-4 text-gray-500">{pedido.fecha}</td>
-                  <td className="py-3 px-4">
-                    <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                      pedido.estado === 'completado' ? 'bg-green-100 text-green-700' :
-                      pedido.estado === 'pendiente' ? 'bg-yellow-100 text-yellow-700' :
-                      'bg-gray-100 text-gray-700'
-                    }`}>
-                      {pedido.estado}
-                    </span>
-                  </td>
+              {productos.slice(0, 5).map((libro) => (
+                <tr key={libro.id} className="border-b border-gray-50 hover:bg-gray-50 transition-colors">
+                  <td className="py-3 px-4 font-medium text-gray-900">{libro.titulo}</td>
+                  <td className="py-3 px-4 text-gray-600">{libro.autor}</td>
+                  <td className="py-3 px-4 text-gray-600">{libro.categoria}</td>
+                  <td className="py-3 px-4 text-gray-500">{libro.formato}</td>
+                  <td className="py-3 px-4 text-right font-medium text-gray-900">{libro.stock}</td>
                   <td className="py-3 px-4 text-right font-medium text-gray-900">
-                    S/ {pedido.total.toFixed(2)}
+                    S/ {libro.precio.toFixed(2)}
                   </td>
                 </tr>
               ))}

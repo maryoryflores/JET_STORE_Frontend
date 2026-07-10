@@ -1,21 +1,22 @@
 import api from './api';
+import { Producto } from '@/types';
+
+interface ApiResponse<T> {
+  ok: boolean;
+  mensaje: string;
+  payload: T;
+}
 
 export const orderService = {
-  create: (data: {
-    direccionEnvio: string;
-    metodoPago: string;
-    items: Array<{ productoId: number; cantidad: number }>;
-  }) => api.post('/pedidos', data),
+  createPayment: (usuarioId: number, metodoPago: string) =>
+    api.post<ApiResponse<{ pagoId: number; metodoPago: string; estado: string; montoTotal: number }>>(
+      '/pago/procesar',
+      { usuarioId, metodoPago }
+    ),
 
-  getAll: (params?: { page?: number; limit?: number; estado?: string }) =>
-    api.get('/pedidos', { params }),
-
-  getById: (id: number) => api.get(`/pedidos/${id}`),
-
-  getByUser: () => api.get('/pedidos/usuario'),
-
-  updateStatus: (id: number, estado: string) =>
-    api.put(`/pedidos/${id}/estado`, { estado }),
-
-  cancel: (id: number) => api.put(`/pedidos/${id}/cancelar`),
+  confirmPayment: (pagoId: number, referencia?: string) =>
+    api.post<ApiResponse<{ ventaId: number; usuario: string; total: number; fechaHora: string; libros: string[] }>>(
+      '/pago/confirmar',
+      { pagoId, referencia }
+    ),
 };

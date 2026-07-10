@@ -1,9 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
-import { HiPhotograph } from 'react-icons/hi';
-import { cn } from '@/utils/cn';
 
 interface ProductGalleryProps {
   images: string[];
@@ -12,46 +9,32 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ images, title }: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-
-  const displayImages = images && images.length > 0 ? images : [];
+  const [imgError, setImgError] = useState(false);
+  const hasImage = images.length > 0 && images[0] && !imgError;
 
   return (
     <div className="space-y-4">
-      <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl overflow-hidden flex items-center justify-center">
-        {displayImages[selectedIndex] ? (
-          <Image
-            src={displayImages[selectedIndex]}
-            alt={`${title} - ${selectedIndex + 1}`}
-            width={400}
-            height={300}
-            className="w-full h-full object-cover"
-          />
+      <div className="relative aspect-[4/3] bg-gradient-to-br from-red-50 to-red-100 rounded-2xl overflow-hidden flex items-center justify-center">
+        {hasImage ? (
+          <img src={images[selectedIndex]} alt={title} className="absolute inset-0 w-full h-full object-cover" />
         ) : (
-          <HiPhotograph className="w-20 h-20 text-gray-300" />
+          <span className="text-red-300 text-8xl font-bold opacity-30">{title.charAt(0)}</span>
         )}
       </div>
-      {displayImages.length > 1 && (
-        <div className="flex gap-3 overflow-x-auto pb-2">
-          {displayImages.map((img, index) => (
+      {hasImage && images.length > 1 && (
+        <div className="flex gap-3">
+          {images.map((img, idx) => (
             <button
+              key={idx}
               type="button"
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-              aria-label={`Seleccionar imagen ${index + 1}`}
-              className={cn(
-                'flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-all',
-                selectedIndex === index
+              onClick={() => setSelectedIndex(idx)}
+              className={`flex-shrink-0 w-20 h-20 rounded-xl overflow-hidden border-2 transition-colors ${
+                idx === selectedIndex
                   ? 'border-[#DC2626] ring-1 ring-[#DC2626]'
-                  : 'border-gray-200 hover:border-gray-300',
-              )}
+                  : 'border-gray-200 hover:border-gray-300'
+              }`}
             >
-              <Image
-                src={img}
-                alt={`${title} miniatura ${index + 1}`}
-                width={80}
-                height={80}
-                className="w-full h-full object-cover"
-              />
+              <img src={img} alt={`${title} ${idx + 1}`} className="w-full h-full object-cover" />
             </button>
           ))}
         </div>

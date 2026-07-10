@@ -18,7 +18,7 @@ export default function DashboardPage() {
     <div className="space-y-8">
       <div className="bg-white rounded-xl border border-gray-100 shadow-sm p-6">
         <h1 className="text-2xl font-bold text-gray-900">
-          Bienvenido, {usuario?.nombres || 'Usuario'}
+          Bienvenido, {usuario?.nombreUsuario || 'Usuario'}
         </h1>
         <p className="text-gray-500 mt-1">Panel de control de tu cuenta JetStore Digital</p>
       </div>

@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Usuario } from '@/types';
 
-export const usuarios: Usuario[] = [
+export const usuarios: any[] = [
   {
     id: 1,
     nombres: 'Admin',

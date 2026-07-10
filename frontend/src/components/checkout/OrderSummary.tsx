@@ -28,13 +28,13 @@ export default function OrderSummary({ items, subtotal, metodo, onConfirm, loadi
 
       <div className="space-y-3">
         {items.map((item) => (
-          <div key={item.producto.id} className="flex items-center justify-between text-sm">
+          <div key={item.itemId} className="flex items-center justify-between text-sm">
             <div className="flex-1 min-w-0">
-              <p className="text-gray-900 font-medium truncate">{item.producto.titulo}</p>
-              <p className="text-gray-500 text-xs">Cant: {item.cantidad} x {formatCurrency(item.producto.precio)}</p>
+              <p className="text-gray-900 font-medium truncate">{item.titulo}</p>
+              <p className="text-gray-500 text-xs">Cant: {item.cantidad} x {formatCurrency(item.precioUnitario)}</p>
             </div>
             <span className="font-medium text-gray-900 ml-4">
-              {formatCurrency(item.producto.precio * item.cantidad)}
+              {formatCurrency(item.subtotal)}
             </span>
           </div>
         ))}

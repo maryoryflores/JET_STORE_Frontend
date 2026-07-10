@@ -1,24 +1,51 @@
 import api from './api';
+import { Producto } from '@/types';
+
+interface ApiResponse<T> {
+  ok: boolean;
+  mensaje: string;
+  payload: T;
+}
+
+export interface LibroData {
+  id?: number;
+  titulo: string;
+  autor: string;
+  categoria?: { nombre: string };
+  precio: number;
+  formato: string;
+  imagen?: string;
+  stock: number;
+}
 
 export const productService = {
-  getAll: (params?: {
-    categoria?: string;
-    search?: string;
-    ordenar?: string;
-    page?: number;
-    limit?: number;
-  }) => api.get('/productos', { params }),
+  getAll: () =>
+    api.get<ApiResponse<Producto[]>>('/libro/todos'),
 
-  getById: (id: number) => api.get(`/productos/${id}`),
+  getById: (id: number) =>
+    api.get<ApiResponse<Producto>>(`/libro/ver/${id}`),
 
-  getBySlug: (slug: string) => api.get(`/productos/slug/${slug}`),
+  search: (query: string) =>
+    api.get<ApiResponse<Producto[]>>('/libro/buscar', { params: { q: query } }),
 
-  getDestacados: () => api.get('/productos/destacados'),
+  filter: (filters: { categoria?: string; formato?: string; precioDesde?: number; precioHasta?: number }) =>
+    api.post<ApiResponse<Producto[]>>('/libro/filtrar', filters),
 
-  getMasVendidos: () => api.get('/productos/mas-vendidos'),
+  getByCategory: (nombre: string) =>
+    api.get<ApiResponse<Producto[]>>(`/libro/categoria/${encodeURIComponent(nombre)}`),
 
-  getRelacionados: (categoriaId: number, excludeId: number) =>
-    api.get(`/productos/relacionados/${categoriaId}`, { params: { exclude: excludeId } }),
+  getRecent: () =>
+    api.get<ApiResponse<Producto[]>>('/libro/recientes'),
 
-  search: (query: string) => api.get('/productos/buscar', { params: { q: query } }),
+  getCategories: () =>
+    api.get<ApiResponse<string[]>>('/libro/categorias'),
+
+  save: (data: LibroData) =>
+    api.post<ApiResponse<null>>('/libro/guardar', data),
+
+  delete: (id: number) =>
+    api.delete<ApiResponse<null>>(`/libro/eliminar/${id}`),
+
+  addStock: (libroId: number, cantidad: number) =>
+    api.post<ApiResponse<null>>('/libro/agregar-stock', { libroId, cantidad }),
 };

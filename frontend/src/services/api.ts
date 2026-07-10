@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080',
   timeout: 15000,
   headers: {
     'Content-Type': 'application/json',
@@ -16,7 +16,7 @@ api.interceptors.request.use(
         try {
           const parsed = JSON.parse(stored);
           if (parsed.state?.token) {
-            config.headers.Authorization = `Bearer ${parsed.state.token}`;
+            config.headers.Authorization = `${parsed.state.token}`;
           }
         } catch {
           // ignore

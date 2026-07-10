@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import {
   HiComputerDesktop, HiBriefcase, HiHeart, HiAcademicCap, HiPaintBrush, HiMegaphone
 } from 'react-icons/hi2';
-import { categorias } from '@/data/categorias';
 import type { Categoria } from '@/types';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -30,8 +29,17 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
+const staticCategories: Categoria[] = [
+  { id: 1, nombre: 'Tecnología', slug: 'tecnologia', descripcion: 'Libros de tecnología y programación', icono: 'HiComputerDesktop', imagen: '', productCount: 0 },
+  { id: 2, nombre: 'Negocios', slug: 'negocios', descripcion: 'Libros de negocios y emprendimiento', icono: 'HiBriefcase', imagen: '', productCount: 0 },
+  { id: 3, nombre: 'Salud', slug: 'salud', descripcion: 'Libros de salud y medicina', icono: 'HiHeart', imagen: '', productCount: 0 },
+  { id: 4, nombre: 'Educación', slug: 'educacion', descripcion: 'Libros de educación y pedagogía', icono: 'HiAcademicCap', imagen: '', productCount: 0 },
+  { id: 5, nombre: 'Diseño', slug: 'diseno', descripcion: 'Libros de diseño y creatividad', icono: 'HiPaintBrush', imagen: '', productCount: 0 },
+  { id: 6, nombre: 'Marketing', slug: 'marketing', descripcion: 'Libros de marketing digital', icono: 'HiMegaphone', imagen: '', productCount: 0 },
+];
+
 function CategoryCard({ categoria }: { categoria: Categoria }) {
-  const Icon = iconMap[categoria.icono];
+  const Icon = iconMap[categoria.icono] || HiComputerDesktop;
 
   return (
     <motion.div variants={cardVariants}>
@@ -44,9 +52,6 @@ function CategoryCard({ categoria }: { categoria: Categoria }) {
         </div>
         <h3 className="text-lg font-bold text-gray-900 mb-1">{categoria.nombre}</h3>
         <p className="text-sm text-gray-500 mb-3 line-clamp-2">{categoria.descripcion}</p>
-        <span className="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full">
-          {categoria.productCount} libros
-        </span>
       </Link>
     </motion.div>
   );
@@ -70,7 +75,7 @@ export default function Categories() {
           viewport={{ once: true, amount: 0.1 }}
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6"
         >
-          {categorias.map((cat) => (
+          {staticCategories.map((cat) => (
             <CategoryCard key={cat.id} categoria={cat} />
           ))}
         </motion.div>

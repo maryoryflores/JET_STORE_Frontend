@@ -2,27 +2,12 @@ export interface Producto {
   id: number;
   titulo: string;
   autor: string;
-  descripcion: string;
-  descripcionCorta: string;
-  precio: number;
-  precioOriginal?: number;
-  imagen: string;
-  imagenes?: string[];
   categoria: string;
-  categoriaId: number;
+  precio: number;
   formato: string;
-  paginas: number;
-  idioma: string;
-  ISBN?: string;
-  rating: number;
-  ratingCount: number;
-  destacado: boolean;
-  masVendido: boolean;
-  oferta: boolean;
-  descuento?: number;
-  stock: boolean;
-  fechaPublicacion: string;
-  tags: string[];
+  imagen?: string;
+  stock: number;
+  fechaCreacion: string;
 }
 
 export interface Categoria {
@@ -66,15 +51,20 @@ export interface Stat {
 }
 
 export interface CarritoItem {
-  producto: Producto;
+  itemId: number;
+  libroId: number;
+  titulo: string;
+  autor: string;
+  precioUnitario: number;
   cantidad: number;
+  subtotal: number;
 }
 
 export interface CarritoState {
   items: CarritoItem[];
   agregar: (producto: Producto, cantidad?: number) => void;
-  eliminar: (productoId: number) => void;
-  actualizarCantidad: (productoId: number, cantidad: number) => void;
+  eliminar: (libroId: number) => void;
+  actualizarCantidad: (libroId: number, cantidad: number) => void;
   vaciar: () => void;
   totalItems: () => number;
   subtotal: () => number;
@@ -82,27 +72,16 @@ export interface CarritoState {
 
 export interface Usuario {
   id: number;
-  nombres: string;
-  apellidos: string;
-  email: string;
-  telefono: string;
-  documento: string;
-  tipoDocumento: string;
-  pais: string;
-  departamento: string;
-  ciudad: string;
-  direccion: string;
-  codigoPostal: string;
-  avatar: string;
-  rol: 'cliente' | 'admin';
-  fechaRegistro: string;
+  nombreUsuario: string;
+  correo: string;
+  rol: 'CLIENTE' | 'ADMIN';
 }
 
 export interface AuthState {
   usuario: Usuario | null;
   token: string | null;
   isAuthenticated: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (nombreUsuario: string, password: string) => Promise<boolean>;
   logout: () => void;
   setUsuario: (usuario: Usuario) => void;
 }

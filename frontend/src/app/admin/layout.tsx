@@ -13,10 +13,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   useEffect(() => {
-    if (!isAuthenticated || usuario?.rol !== 'admin') router.push('/');
+    if (!isAuthenticated || usuario?.rol !== 'ADMIN') router.push('/');
   }, [isAuthenticated, usuario, router]);
 
-  if (!isAuthenticated || usuario?.rol !== 'admin') return null;
+  if (!isAuthenticated || usuario?.rol !== 'ADMIN') return null;
 
   const pageTitle = pathname.split('/').pop() || 'Dashboard';
   const formattedTitle = pageTitle.charAt(0).toUpperCase() + pageTitle.slice(1);

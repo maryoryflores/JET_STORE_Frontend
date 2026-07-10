@@ -3,13 +3,17 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { Producto, CarritoItem } from '@/types';
+import { cartService } from '@/services/cart.service';
+import { useAuthStore } from './auth-store';
 
 interface CartStore {
   items: CarritoItem[];
-  agregar: (producto: Producto, cantidad?: number) => void;
-  eliminar: (productoId: number) => void;
-  actualizarCantidad: (productoId: number, cantidad: number) => void;
+  total: number;
+  agregar: (producto: Producto, cantidad?: number) => Promise<boolean>;
+  eliminar: (libroId: number) => Promise<boolean>;
+  actualizarCantidad: (libroId: number, cantidad: number) => Promise<boolean>;
   vaciar: () => void;
+  cargarCarrito: () => Promise<void>;
   totalItems: () => number;
   subtotal: () => number;
 }
@@ -18,37 +22,90 @@ export const useCartStore = create<CartStore>()(
   persist(
     (set, get) => ({
       items: [],
-      agregar: (producto: Producto, cantidad = 1) => {
-        set((state) => {
-          const existente = state.items.find((item) => item.producto.id === producto.id);
-          if (existente) {
-            return {
-              items: state.items.map((item) =>
-                item.producto.id === producto.id
-                  ? { ...item, cantidad: item.cantidad + cantidad }
-                  : item
-              ),
-            };
+      total: 0,
+
+      agregar: async (producto: Producto, cantidad = 1) => {
+        const { usuario, isAuthenticated } = useAuthStore.getState();
+        if (!isAuthenticated || !usuario) return false;
+        try {
+          const response = await cartService.addItem(usuario.id, producto.id, cantidad);
+          const data = response.data;
+          if (data.ok && data.payload) {
+            set({
+              items: data.payload.items,
+              total: data.payload.total,
+            });
+            return true;
           }
-          return { items: [...state.items, { producto, cantidad }] };
-        });
+          return false;
+        } catch {
+          return false;
+        }
       },
-      eliminar: (productoId: number) => {
-        set((state) => ({
-          items: state.items.filter((item) => item.producto.id !== productoId),
-        }));
+
+      eliminar: async (libroId: number) => {
+        const { usuario, isAuthenticated } = useAuthStore.getState();
+        if (!isAuthenticated || !usuario) return false;
+        try {
+          const response = await cartService.removeItem(usuario.id, libroId);
+          const data = response.data;
+          if (data.ok && data.payload) {
+            set({
+              items: data.payload.items,
+              total: data.payload.total,
+            });
+            return true;
+          }
+          return false;
+        } catch {
+          return false;
+        }
       },
-      actualizarCantidad: (productoId: number, cantidad: number) => {
-        if (cantidad < 1) return;
-        set((state) => ({
-          items: state.items.map((item) =>
-            item.producto.id === productoId ? { ...item, cantidad } : item
-          ),
-        }));
+
+      actualizarCantidad: async (libroId: number, cantidad: number) => {
+        const { usuario, isAuthenticated } = useAuthStore.getState();
+        if (!isAuthenticated || !usuario || cantidad < 1) return false;
+        try {
+          await cartService.removeItem(usuario.id, libroId);
+          const response = await cartService.addItem(usuario.id, libroId, cantidad);
+          const data = response.data;
+          if (data.ok && data.payload) {
+            set({
+              items: data.payload.items,
+              total: data.payload.total,
+            });
+            return true;
+          }
+          return false;
+        } catch {
+          return false;
+        }
       },
-      vaciar: () => set({ items: [] }),
-      totalItems: () => get().items.reduce((total, item) => total + item.cantidad, 0),
-      subtotal: () => get().items.reduce((total, item) => total + item.producto.precio * item.cantidad, 0),
+
+      vaciar: () => set({ items: [], total: 0 }),
+
+      cargarCarrito: async () => {
+        const { usuario, isAuthenticated } = useAuthStore.getState();
+        if (!isAuthenticated || !usuario) {
+          set({ items: [], total: 0 });
+          return;
+        }
+        try {
+          const response = await cartService.getCart(usuario.id);
+          const data = response.data;
+          if (data.ok && data.payload) {
+            set({
+              items: data.payload.items,
+              total: data.payload.total,
+            });
+          }
+        } catch {
+          set({ items: [], total: 0 });
+        }
+      },
+
+      totalItems: () => get().items.reduce((acc, item) => acc + item.cantidad, 0),
+      subtotal: () => get().items.reduce((acc, item) => acc + item.subtotal, 0),
     }),
     { name: 'jetstore-cart' }
   )

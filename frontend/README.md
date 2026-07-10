@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# JetStore — Frontend
 
-## Getting Started
+Interfaz de usuario de la plataforma JetStore Digital. Construida con Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS v4 y Zustand.
 
-First, run the development server:
+## Estructura
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+src/
+├── app/                    # App Router
+│   ├── layout.tsx          # Layout raíz (providers, Navbar, Footer)
+│   ├── page.tsx            # Landing page
+│   ├── login/page.tsx      # Login + modo invitado
+│   ├── registro/page.tsx   # Registro de usuario
+│   ├── catalogo/page.tsx   # Catálogo de productos
+│   ├── producto/[id]/      # Detalle de producto
+│   ├── carrito/page.tsx    # Carrito de compras
+│   ├── checkout/           # Checkout + confirmación
+│   ├── dashboard/          # Panel de cliente (perfil, historial, biblioteca, favoritos)
+│   ├── admin/              # Panel de administración (CRUD, reportes)
+│   └── contacto/           # Formulario de contacto
+├── components/
+│   ├── ui/                 # Componentes reutilizables (Button, Input, Modal, Toast, Spinner)
+│   ├── layout/             # Navbar, Footer
+│   ├── catalog/            # ProductGrid, ProductFilters
+│   ├── checkout/           # OrderSummary
+│   ├── product/            # ProductGallery, ProductInfo, RelatedProducts
+│   ├── cart/               # CartItem
+│   ├── admin/              # AdminHeader, ProductsTable, UsersTable, ...
+│   ├── dashboard/          # PurchaseHistory, FavoritesList, ProfileForm, ...
+│   ├── home/               # Hero, FeaturedProducts, Categories, ...
+│   └── contact/            # ContactForm
+├── services/               # Llamadas HTTP (Axios)
+│   ├── api.ts              # Configuración Axios (baseURL, interceptor de token)
+│   ├── auth.service.ts     # Login, registro, perfil, cerrar sesión
+│   ├── product.service.ts  # CRUD de libros
+│   ├── cart.service.ts     # Carrito
+│   ├── payment.service.ts  # Pagos
+│   └── user.service.ts     # Datos de usuario
+├── store/                  # Estado global (Zustand)
+│   ├── auth-store.ts       # Autenticación + sesión
+│   ├── cart-store.ts       # Carrito
+│   └── favorites-store.ts  # Favoritos
+├── types/index.ts          # Interfaces TypeScript
+├── utils/
+│   ├── validators.ts       # Schemas Zod (login, registro, perfil)
+│   ├── format.ts           # formatCurrency, truncateText, ...
+│   └── cn.ts               # Utility para classNames
+├── config/                 # Constantes de configuración
+└── data/                   # Datos mock (solo contenido estático: testimonios, FAQ, beneficios)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Inicio
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abrir http://localhost:3000.
 
-## Learn More
+## Variables de entorno
 
-To learn more about Next.js, take a look at the following resources:
+No se requieren. La URL del backend está configurada en `src/services/api.ts`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```typescript
+baseURL: 'http://localhost:8080'
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Autenticación
 
-## Deploy on Vercel
+El sistema usa tokens UUID enviados en el header `Authorization` (sin prefijo `Bearer`). El token se almacena en `localStorage` bajo la clave `jetstore-auth` y se gestiona via Zustand.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Roles
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Rol     | Acceso |
+|---------|--------|
+| ADMIN   | Rutas `/admin/*` — CRUD completo de libros, usuarios, pedidos, reportes |
+| CLIENTE | Catálogo, carrito, checkout, dashboard (perfil, historial, biblioteca, favoritos) |
+| Guest   | Solo catálogo. Al intentar agregar al carrito se redirige a login |
+
+## Scripts
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm run dev` | Servidor de desarrollo con Turbopack |
+| `npm run build` | Build de producción |
+| `npm run start` | Iniciar build de producción |
+| `npm run lint` | Linting con ESLint |

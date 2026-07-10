@@ -1,48 +1,25 @@
 import api from './api';
+import { LibroData, productService } from './product.service';
+
+interface ApiResponse<T> {
+  ok: boolean;
+  mensaje: string;
+  payload: T;
+}
 
 export const adminService = {
-  getStats: () => api.get('/admin/stats'),
+  getStats: () => Promise.resolve({ data: { ok: true, mensaje: 'ok', payload: null } }),
 
-  getUsers: (params?: { page?: number; limit?: number; search?: string }) =>
-    api.get('/admin/usuarios', { params }),
+  getUsers: () =>
+    api.get<ApiResponse<Array<{ id: number; nombreUsuario: string; correo: string; rol: string }>>>(
+      '/usuario/todos'
+    ),
 
-  updateUserRole: (userId: number, rol: string) =>
-    api.put(`/admin/usuarios/${userId}/rol`, { rol }),
+  saveProduct: (data: LibroData) => productService.save(data),
 
-  getProducts: (params?: { page?: number; limit?: number; search?: string }) =>
-    api.get('/admin/productos', { params }),
+  deleteProduct: (id: number) => productService.delete(id),
 
-  createProduct: (data: FormData) =>
-    api.post('/admin/productos', data, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
+  addStock: (libroId: number, cantidad: number) => productService.addStock(libroId, cantidad),
 
-  updateProduct: (id: number, data: FormData) =>
-    api.put(`/admin/productos/${id}`, data, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }),
-
-  deleteProduct: (id: number) => api.delete(`/admin/productos/${id}`),
-
-  getCategories: () => api.get('/admin/categorias'),
-
-  createCategory: (data: { nombre: string; descripcion: string }) =>
-    api.post('/admin/categorias', data),
-
-  updateCategory: (id: number, data: { nombre: string; descripcion: string }) =>
-    api.put(`/admin/categorias/${id}`, data),
-
-  deleteCategory: (id: number) => api.delete(`/admin/categorias/${id}`),
-
-  getOrders: (params?: { page?: number; limit?: number; estado?: string }) =>
-    api.get('/admin/pedidos', { params }),
-
-  updateOrderStatus: (id: number, estado: string) =>
-    api.put(`/admin/pedidos/${id}/estado`, { estado }),
-
-  getPayments: (params?: { page?: number; limit?: number }) =>
-    api.get('/admin/pagos', { params }),
-
-  getLogs: (params?: { page?: number; limit?: number }) =>
-    api.get('/admin/logs', { params }),
+  getCategories: () => productService.getCategories(),
 };

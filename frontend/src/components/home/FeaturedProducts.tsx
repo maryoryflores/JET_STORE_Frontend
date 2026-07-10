@@ -1,15 +1,16 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image'; 
 import { motion } from 'framer-motion';
 import { HiHeart, HiShoppingCart, HiStar } from 'react-icons/hi';
-import { productos } from '@/data/productos';
 import { useCartStore } from '@/store/cart-store';
+import { useAuthStore } from '@/store/auth-store';
 import { useFavoritesStore } from '@/store/favorites-store';
 import { formatCurrency } from '@/utils/format';
-import type { Producto } from '@/types';
+import { productService } from '@/services/product.service';
+import { Producto } from '@/types';
+import Swal from 'sweetalert2';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -26,18 +27,10 @@ const cardVariants = {
 
 function StarRating({ rating }: { rating: number }) {
   const full = Math.floor(rating);
-  const hasHalf = rating % 1 >= 0.5;
   const stars = [];
   for (let i = 0; i < 5; i++) {
     if (i < full) {
       stars.push(<HiStar key={i} className="w-4 h-4 text-yellow-400 fill-current" />);
-    } else if (i === full && hasHalf) {
-      stars.push(
-        <span key={i} className="relative">
-          <HiStar className="w-4 h-4 text-gray-300" />
-          <HiStar className="w-4 h-4 text-yellow-400 fill-current absolute inset-0 overflow-hidden" style={{ clipPath: 'inset(0 50% 0 0)' }} />
-        </span>
-      );
     } else {
       stars.push(<HiStar key={i} className="w-4 h-4 text-gray-300" />);
     }
@@ -49,10 +42,25 @@ function ProductCard({ producto }: { producto: Producto }) {
   const [isHovered, setIsHovered] = useState(false);
   const agregar = useCartStore((s) => s.agregar);
   const { toggle, isFavorite } = useFavoritesStore();
-  const discounted = producto.precioOriginal && producto.precioOriginal > producto.precio;
-  const discountPercent = discounted
-    ? Math.round(((producto.precioOriginal! - producto.precio) / producto.precioOriginal!) * 100)
-    : 0;
+  const { isAuthenticated } = useAuthStore();
+
+  const handleAddToCart = () => {
+    if (!isAuthenticated) {
+      Swal.fire({
+        title: 'Inicia sesión',
+        text: 'Necesitas una cuenta para agregar productos al carrito.',
+        icon: 'info',
+        confirmButtonColor: '#DC2626',
+        confirmButtonText: 'Ir a Login',
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.href = '/login';
+        }
+      });
+      return;
+    }
+    agregar(producto);
+  };
 
   return (
     <motion.div
@@ -62,26 +70,11 @@ function ProductCard({ producto }: { producto: Producto }) {
       className="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden"
     >
       <Link href={`/producto/${producto.id}`}>
-        <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center overflow-hidden">
-          {producto.imagen ? (
-            <Image 
-              src={producto.imagen} 
-              alt={producto.titulo}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-            />
-          ) : (
-            <span className="text-gray-400 text-4xl font-bold opacity-20">{producto.titulo.charAt(0)}</span>
-          )}
-
-          {discounted && (
-            <span className="absolute top-3 left-3 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
-              -{discountPercent}%
-            </span>
-          )}
-          {producto.masVendido && (
-            <span className="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
-              Más Vendido
+        <div className="relative aspect-[4/3] bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center overflow-hidden">
+          <span className="text-red-300 text-5xl font-bold opacity-30">{producto.titulo.charAt(0)}</span>
+          {producto.stock <= 0 && (
+            <span className="absolute top-3 left-3 bg-gray-600 text-white text-xs font-bold px-2.5 py-1 rounded-full z-10">
+              Sin Stock
             </span>
           )}
         </div>
@@ -112,28 +105,23 @@ function ProductCard({ producto }: { producto: Producto }) {
         </Link>
 
         <div className="flex items-center gap-2 mb-3">
-          <StarRating rating={producto.rating} />
-          <span className="text-xs text-gray-400">({producto.ratingCount})</span>
+          <StarRating rating={4} />
         </div>
 
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-lg font-bold text-gray-900">{formatCurrency(producto.precio)}</span>
-            {producto.precioOriginal && (
-              <span className="text-sm text-gray-400 line-through">{formatCurrency(producto.precioOriginal)}</span>
-            )}
-          </div>
+          <span className="text-lg font-bold text-gray-900">{formatCurrency(producto.precio)}</span>
         </div>
 
         <motion.button
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : 10 }}
           transition={{ duration: 0.2 }}
-          onClick={() => agregar(producto)}
-          className="mt-3 w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors"
+          onClick={handleAddToCart}
+          disabled={producto.stock <= 0}
+          className="mt-3 w-full flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold py-2.5 rounded-xl transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <HiShoppingCart className="w-4 h-4" />
-          Agregar al Carrito
+          {producto.stock > 0 ? 'Agregar al Carrito' : 'Sin Stock'}
         </motion.button>
       </div>
     </motion.div>
@@ -141,7 +129,23 @@ function ProductCard({ producto }: { producto: Producto }) {
 }
 
 export default function FeaturedProducts() {
-  const featured = productos.filter((p) => p.destacado).slice(0, 8);
+  const [featured, setFeatured] = useState<Producto[]>([]);
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await productService.getRecent();
+        if (res.data.ok) {
+          setFeatured(res.data.payload.slice(0, 8));
+        }
+      } catch {
+        setFeatured([]);
+      }
+    };
+    load();
+  }, []);
+
+  if (featured.length === 0) return null;
 
   return (
     <section className="py-20 bg-white">
@@ -149,7 +153,7 @@ export default function FeaturedProducts() {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Productos Destacados</h2>
           <p className="text-gray-500 max-w-xl mx-auto">
-            Los títulos más populares y mejor valorados por nuestra comunidad de lectores
+            Los títulos más recientes disponibles en nuestra tienda
           </p>
         </div>
 

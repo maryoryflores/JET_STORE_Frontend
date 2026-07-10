@@ -1,24 +1,55 @@
 'use client';
 
-import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { HiStar, HiShoppingCart, HiPhotograph } from 'react-icons/hi';
-import { productos } from '@/data/productos';
 import { formatCurrency, truncateText } from '@/utils/format';
 import { useCartStore } from '@/store/cart-store';
+import { useAuthStore } from '@/store/auth-store';
+import { productService } from '@/services/product.service';
+import { Producto } from '@/types';
 import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
+import Swal from 'sweetalert2';
 
 interface RelatedProductsProps {
   currentId: number;
-  categoriaId: number;
+  categoria: string;
 }
 
-export default function RelatedProducts({ currentId, categoriaId }: RelatedProductsProps) {
+export default function RelatedProducts({ currentId, categoria }: RelatedProductsProps) {
   const agregar = useCartStore((s) => s.agregar);
+  const { isAuthenticated } = useAuthStore();
+  const [related, setRelated] = useState<Producto[]>([]);
 
-  const related = productos
-    .filter((p) => p.categoriaId === categoriaId && p.id !== currentId)
-    .slice(0, 4);
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const res = await productService.getByCategory(categoria);
+        if (res.data.ok) {
+          setRelated(res.data.payload.filter((p) => p.id !== currentId).slice(0, 4));
+        }
+      } catch {
+        setRelated([]);
+      }
+    };
+    if (categoria) load();
+  }, [currentId, categoria]);
+
+  const handleAddToCart = (producto: Producto) => {
+    if (!isAuthenticated) {
+      Swal.fire({
+        title: 'Inicia sesión',
+        text: 'Necesitas una cuenta para agregar productos al carrito.',
+        icon: 'info',
+        confirmButtonColor: '#DC2626',
+        confirmButtonText: 'Ir a Login',
+      }).then((result) => {
+        if (result.isConfirmed) window.location.href = '/login';
+      });
+      return;
+    }
+    agregar(producto);
+  };
 
   if (related.length === 0) return null;
 
@@ -31,47 +62,27 @@ export default function RelatedProducts({ currentId, categoriaId }: RelatedProdu
             key={producto.id}
             className="group bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 overflow-hidden"
           >
-            <div className="relative aspect-[4/3] bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-              {producto.imagen ? (
-                <Image
-                  src={producto.imagen}
-                  alt={producto.titulo}
-                  width={200}
-                  height={150}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              ) : (
-                <HiPhotograph className="w-8 h-8 text-gray-300" />
-              )}
-              {producto.oferta && producto.descuento && (
-                <Badge variant="danger" className="absolute top-2 left-2">
-                  -{producto.descuento}%
-                </Badge>
-              )}
-            </div>
+            <Link href={`/producto/${producto.id}`}>
+              <div className="relative aspect-[4/3] bg-gradient-to-br from-red-50 to-red-100 flex items-center justify-center">
+                <span className="text-red-300 text-3xl font-bold opacity-30">{producto.titulo.charAt(0)}</span>
+              </div>
+            </Link>
             <div className="p-3 space-y-1.5">
               <h3 className="font-semibold text-gray-900 text-sm leading-tight">
                 {truncateText(producto.titulo, 35)}
               </h3>
               <p className="text-xs text-gray-500">{producto.autor}</p>
-              <div className="flex items-center gap-1">
-                <HiStar className="w-3 h-3 text-yellow-400 fill-yellow-400" />
-                <span className="text-xs font-medium text-gray-700">{producto.rating}</span>
-              </div>
               <div className="flex items-center gap-2">
                 <span className="text-sm font-bold text-gray-900">{formatCurrency(producto.precio)}</span>
-                {producto.precioOriginal && (
-                  <span className="text-xs text-gray-400 line-through">{formatCurrency(producto.precioOriginal)}</span>
-                )}
               </div>
               <Button
                 fullWidth
                 size="sm"
                 icon={<HiShoppingCart className="w-3 h-3" />}
-                onClick={() => agregar(producto)}
-                disabled={!producto.stock}
+                onClick={() => handleAddToCart(producto)}
+                disabled={producto.stock <= 0}
               >
-                {producto.stock ? 'Agregar' : 'Sin Stock'}
+                {producto.stock > 0 ? 'Agregar' : 'Sin Stock'}
               </Button>
             </div>
           </div>

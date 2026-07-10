@@ -1,23 +1,40 @@
 import api from './api';
 
+interface ApiResponse<T> {
+  ok: boolean;
+  mensaje: string;
+  payload: T;
+}
+
 export const authService = {
-  login: (email: string, password: string) =>
-    api.post('/auth/login', { email, password }),
+  login: (nombreUsuario: string, password: string) =>
+    api.post<ApiResponse<{ token: string; usuarioId: number; nombreUsuario: string; rol: string }>>(
+      '/usuario/login',
+      { nombreUsuario, password }
+    ),
 
   register: (data: {
-    nombres: string;
-    apellidos: string;
-    email: string;
+    nombreUsuario: string;
+    correo: string;
     password: string;
-    telefono: string;
-    documento: string;
-  }) => api.post('/auth/register', data),
+    rol: string;
+  }) => api.post<ApiResponse<{ id: number; nombreUsuario: string; correo: string; rol: string }>>(
+    '/usuario/registrar',
+    data
+  ),
 
-  verifyToken: () => api.get('/auth/verify'),
+  getProfile: (usuarioId: number) =>
+    api.get<ApiResponse<{ id: number; nombreUsuario: string; correo: string; rol: string }>>(
+      `/usuario/perfil/${usuarioId}`
+    ),
 
-  forgotPassword: (email: string) =>
-    api.post('/auth/forgot-password', { email }),
+  logout: (token: string) =>
+    api.post<ApiResponse<null>>('/usuario/cerrar-sesion', null, {
+      headers: { Authorization: token },
+    }),
 
-  resetPassword: (token: string, password: string) =>
-    api.post('/auth/reset-password', { token, password }),
+  listUsers: () =>
+    api.get<ApiResponse<Array<{ id: number; nombreUsuario: string; correo: string; rol: string }>>>(
+      '/usuario/todos'
+    ),
 };
