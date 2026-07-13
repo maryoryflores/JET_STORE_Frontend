@@ -20,9 +20,9 @@ export default function ContactoPage() {
 
   const contactInfo = [
     { icon: HiMail, label: 'Email', value: 'contacto@jetstore.pe' },
-    { icon: HiPhone, label: 'Teléfono', value: '+51 999 888 777' },
-    { icon: HiLocationMarker, label: 'Dirección', value: 'Av. Principal 123, Miraflores, Lima' },
-    { icon: HiClock, label: 'Horario', value: 'Lun - Vie: 9:00 AM - 6:00 PM' },
+    { icon: HiPhone, label: 'Teléfono', value: '+51 926 849 164' },
+    { icon: HiLocationMarker, label: 'Dirección', value: 'Jr. Pedro Galvez 883' },
+    { icon: HiClock, label: 'Horario', value: 'Lun - domingo: 24/7' },
   ];
 
   return (
