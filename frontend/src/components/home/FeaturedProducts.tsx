@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HiHeart, HiShoppingCart, HiStar } from 'react-icons/hi';
 import { useCartStore } from '@/store/cart-store';
@@ -10,6 +11,7 @@ import { useFavoritesStore } from '@/store/favorites-store';
 import { formatCurrency } from '@/utils/format';
 import { productService } from '@/services/product.service';
 import { Producto } from '@/types';
+import { productos as mockProductos } from '@/data/productos';
 import Swal from 'sweetalert2';
 
 const containerVariants = {
@@ -43,6 +45,7 @@ function ProductCard({ producto }: { producto: Producto }) {
   const agregar = useCartStore((s) => s.agregar);
   const { toggle, isFavorite } = useFavoritesStore();
   const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
 
   const handleAddToCart = () => {
     if (!isAuthenticated) {
@@ -54,7 +57,7 @@ function ProductCard({ producto }: { producto: Producto }) {
         confirmButtonText: 'Ir a Login',
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = '/login';
+          router.push('/login');
         }
       });
       return;
@@ -139,7 +142,19 @@ export default function FeaturedProducts() {
           setFeatured(res.data.payload.slice(0, 8));
         }
       } catch {
-        setFeatured([]);
+        setFeatured(
+          mockProductos.slice(0, 8).map((p) => ({
+            id: p.id,
+            titulo: p.titulo,
+            autor: p.autor,
+            categoria: p.categoria,
+            precio: p.precio,
+            formato: p.formato,
+            imagen: p.imagen,
+            stock: p.stock,
+            fechaCreacion: p.fechaPublicacion,
+          }))
+        );
       }
     };
     load();

@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { HiArrowRight } from 'react-icons/hi';
-import Stats from './Stats';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -65,10 +64,6 @@ export default function Hero() {
             </Link>
           </motion.div>
         </motion.div>
-      </div>
-
-      <div className="relative pb-16 lg:pb-20">
-        <Stats />
       </div>
     </section>
   );

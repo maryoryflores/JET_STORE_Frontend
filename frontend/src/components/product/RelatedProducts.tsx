@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { HiStar, HiShoppingCart, HiPhotograph } from 'react-icons/hi';
+import { useRouter } from 'next/navigation';
+import { HiShoppingCart } from 'react-icons/hi';
 import { formatCurrency, truncateText } from '@/utils/format';
 import { useCartStore } from '@/store/cart-store';
 import { useAuthStore } from '@/store/auth-store';
 import { productService } from '@/services/product.service';
 import { Producto } from '@/types';
+import { productos as mockProductos } from '@/data/productos';
 import Button from '@/components/ui/Button';
 import Swal from 'sweetalert2';
 
@@ -20,6 +22,7 @@ export default function RelatedProducts({ currentId, categoria }: RelatedProduct
   const agregar = useCartStore((s) => s.agregar);
   const { isAuthenticated } = useAuthStore();
   const [related, setRelated] = useState<Producto[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const load = async () => {
@@ -29,7 +32,22 @@ export default function RelatedProducts({ currentId, categoria }: RelatedProduct
           setRelated(res.data.payload.filter((p) => p.id !== currentId).slice(0, 4));
         }
       } catch {
-        setRelated([]);
+        setRelated(
+          mockProductos
+            .filter((p) => p.categoria.toLowerCase() === categoria.toLowerCase() && p.id !== currentId)
+            .slice(0, 4)
+            .map((p) => ({
+              id: p.id,
+              titulo: p.titulo,
+              autor: p.autor,
+              categoria: p.categoria,
+              precio: p.precio,
+              formato: p.formato,
+              imagen: p.imagen,
+              stock: p.stock,
+              fechaCreacion: p.fechaPublicacion,
+            }))
+        );
       }
     };
     if (categoria) load();
@@ -44,7 +62,7 @@ export default function RelatedProducts({ currentId, categoria }: RelatedProduct
         confirmButtonColor: '#DC2626',
         confirmButtonText: 'Ir a Login',
       }).then((result) => {
-        if (result.isConfirmed) window.location.href = '/login';
+        if (result.isConfirmed) router.push('/login');
       });
       return;
     }

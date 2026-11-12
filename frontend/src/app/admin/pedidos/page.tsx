@@ -1,7 +1,5 @@
-'use client';
+import PedidosClient from './PedidosClient';
 
-import OrdersTable from '@/components/admin/OrdersTable';
-
-export default function AdminPedidosPage() {
-  return <OrdersTable />;
+export default function Page() {
+  return <PedidosClient />;
 }

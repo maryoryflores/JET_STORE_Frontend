@@ -1,7 +1,5 @@
-'use client';
+import ConfiguracionClient from './ConfiguracionClient';
 
-import SettingsForm from '@/components/dashboard/SettingsForm';
-
-export default function ConfiguracionPage() {
-  return <SettingsForm />;
+export default function Page() {
+  return <ConfiguracionClient />;
 }

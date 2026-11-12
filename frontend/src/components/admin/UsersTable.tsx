@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import { adminService } from '@/services/admin.service';
+import { usuarios as mockUsuarios } from '@/data/usuarios';
 import Table from '@/components/ui/Table';
 import Badge from '@/components/ui/Badge';
 import Input from '@/components/ui/Input';
@@ -24,7 +25,14 @@ export default function UsersTable() {
         const res = await adminService.getUsers();
         if (res.data.ok) setUsuarios(res.data.payload);
       } catch {
-        // ignore
+        setUsuarios(
+          mockUsuarios.map((u) => ({
+            id: u.id,
+            nombreUsuario: `${u.nombres} ${u.apellidos}`,
+            correo: u.email,
+            rol: u.rol === 'admin' ? 'ADMIN' : 'CLIENTE',
+          }))
+        );
       }
     };
     load();

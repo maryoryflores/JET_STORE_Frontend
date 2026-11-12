@@ -1,0 +1,294 @@
+The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/da123/Documents/jetstore/Frontend/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 37[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 54[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 84[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 73[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 61[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 72[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 30[2mms[22m[39m
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts [2m([22m[2m24 tests[22m[2m)[22m[90m 236[2mms[22m[39m
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts [2m([22m[2m16 tests[22m[2m)[22m[90m 99[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 57[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts [2m([22m[2m17 tests[22m[2m)[22m[90m 76[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 511[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 572[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Table[2m > [22mrenders column headers [33m307[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/order.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/payment.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 104[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1749[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Alert[2m > [22mrenders message [33m392[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Alert[2m > [22mrenders close button when onClose is provided [33m1132[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1789[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Select[2m > [22mrenders select element [33m1445[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 69[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 64[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 293[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Categories.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 315[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1972[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Pagination[2m > [22mrenders page buttons [33m327[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Pagination[2m > [22mcalls onPageChange when page is clicked [33m1237[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 2679[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Input[2m > [22mrenders input element [33m1523[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Input[2m > [22mpasses value and onChange [33m531[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 2465[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Button[2m > [22mrenders with text [33m1508[2mms[22m[39m
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders brand name
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders quick links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders category links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders copyright
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 353[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/OrdersTable.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 2268[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m OrdersTable[2m > [22mfilters orders by search [33m2129[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 287[2mms[22m[39m
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 646[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CartSummary[2m > [22mrenders subtotal [33m472[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 36[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/user.service.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 34[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/report.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 22[2mms[22m[39m
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1135[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m PurchaseHistory[2m > [22mrenders filter tabs [33m733[2mms[22m[39m
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 2[2mms[22m[39m
+ [32mÔ£ô[39m src/components/product/__tests__/ProductGallery.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1965[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGallery[2m > [22mrenders title placeholder when no images [33m366[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGallery[2m > [22mrenders image when provided [33m1244[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGallery[2m > [22mrenders thumbnails for multiple images [33m348[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/HowItWorks.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 67[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/faqs.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 2[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 76[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/testimonios.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/StatsCards.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 594[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m StatsCards[2m > [22mrenders stat labels [33m472[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Benefits.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 794[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Benefits[2m > [22mrenders section heading [33m570[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 571[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Hero[2m > [22mrenders heading [33m360[2mms[22m[39m
+stderr | src/components/layout/__tests__/Navbar.test.tsx > Navbar > renders brand name
+Received `true` for a non-boolean attribute `priority`.
+
+If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1438[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Textarea[2m > [22mrenders textarea element [33m1296[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 248[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 718[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m LogsView[2m > [22mrenders search input [33m469[2mms[22m[39m
+ [32mÔ£ô[39m src/components/cart/__tests__/CartItem.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 413[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CartItem[2m > [22mrenders item title [33m316[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 984[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m SearchBar[2m > [22mrenders input [33m918[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 96[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Stats.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 62[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/PaymentsTable.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 68[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 202[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductSort.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 173[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m57 passed[39m[22m[90m (57)[39m
+[2m      Tests [22m [1m[32m293 passed[39m[22m[90m (293)[39m
+[2m   Start at [22m 16:08:28
+[2m   Duration [22m 14.66s[2m (transform 12.02s, setup 14.73s, collect 42.60s, tests 26.77s, environment 94.77s, prepare 11.14s)[22m
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   41.68 |     73.1 |   51.65 |   41.68 |                   
+ app               |       0 |        0 |       0 |       0 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-25              
+ app/admin         |       0 |        0 |       0 |       0 |                   
+  AdminClient.tsx  |       0 |        0 |       0 |       0 | 1-75              
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-33              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...min/categorias |       0 |        0 |       0 |       0 |                   
+  ...iasClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |       0 |        0 |       0 |       0 |                   
+  ...figClient.tsx |       0 |        0 |       0 |       0 | 1-92              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/logs    |       0 |        0 |       0 |       0 |                   
+  LogsClient.tsx   |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pagos   |       0 |        0 |       0 |       0 |                   
+  PagosClient.tsx  |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pedidos |       0 |        0 |       0 |       0 |                   
+  ...dosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...dmin/productos |       0 |        0 |       0 |       0 |                   
+  ...tosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/reportes |       0 |        0 |       0 |       0 |                   
+  ...tesClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/usuarios |       0 |        0 |       0 |       0 |                   
+  ...iosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/carrito       |       0 |        0 |       0 |       0 |                   
+  ...itoClient.tsx |       0 |        0 |       0 |       0 | 1-94              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/catalogo      |       0 |        0 |       0 |       0 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/checkout      |       0 |        0 |       0 |       0 |                   
+  ...outClient.tsx |       0 |        0 |       0 |       0 | 1-216             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...eckout/success |       0 |        0 |       0 |       0 |                   
+  ...essClient.tsx |       0 |        0 |       0 |       0 | 1-62              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/contacto      |       0 |        0 |       0 |       0 |                   
+  ...ctoClient.tsx |       0 |        0 |       0 |       0 | 1-86              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/dashboard     |       0 |        0 |       0 |       0 |                   
+  ...ardClient.tsx |       0 |        0 |       0 |       0 | 1-46              
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-18              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...ard/biblioteca |       0 |        0 |       0 |       0 |                   
+  ...ecaClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...hboard/compras |       0 |        0 |       0 |       0 |                   
+  ...rasClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |       0 |        0 |       0 |       0 |                   
+  ...ionClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...oard/favoritos |       0 |        0 |       0 |       0 |                   
+  ...tosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...shboard/perfil |       0 |        0 |       0 |       0 |                   
+  PerfilClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/login         |       0 |        0 |       0 |       0 |                   
+  LoginClient.tsx  |       0 |        0 |       0 |       0 | 1-166             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/producto/[id] |       0 |        0 |       0 |       0 |                   
+  ...ctoClient.tsx |       0 |        0 |       0 |       0 | 1-106             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/registro      |       0 |        0 |       0 |       0 |                   
+  ...troClient.tsx |       0 |        0 |       0 |       0 | 1-154             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ components/admin  |   30.57 |     73.8 |   63.33 |   30.57 |                   
+  AdminHeader.tsx  |       0 |        0 |       0 |       0 | 1-79              
+  AdminSidebar.tsx |       0 |        0 |       0 |       0 | 1-79              
+  ...riesTable.tsx |       0 |        0 |       0 |       0 | 1-71              
+  Charts.tsx       |     100 |      100 |     100 |     100 |                   
+  LogsView.tsx     |   81.01 |    57.14 |      50 |   81.01 | 35-43,45-46,48-51 
+  OrdersTable.tsx  |   94.73 |    91.66 |   77.77 |   94.73 | 42-45             
+  ...entsTable.tsx |     100 |    83.33 |     100 |     100 | 29                
+  ...uctsTable.tsx |       0 |        0 |       0 |       0 | 1-379             
+  ReportsView.tsx  |       0 |        0 |       0 |       0 | 1-42              
+  StatsCards.tsx   |     100 |      100 |     100 |     100 |                   
+  UsersTable.tsx   |       0 |        0 |       0 |       0 | 1-82              
+ components/cart   |     100 |      100 |   33.33 |     100 |                   
+  CartItem.tsx     |     100 |      100 |      25 |     100 |                   
+  CartSummary.tsx  |     100 |      100 |      50 |     100 |                   
+ ...onents/catalog |   12.41 |       60 |      25 |   12.41 |                   
+  CatalogoView.tsx |       0 |        0 |       0 |       0 | 1-237             
+  ...ctFilters.tsx |       0 |        0 |       0 |       0 | 1-125             
+  ProductGrid.tsx  |       0 |        0 |       0 |       0 | 1-123             
+  ProductSort.tsx  |     100 |      100 |      50 |     100 |                   
+  SearchBar.tsx    |    73.8 |       80 |   33.33 |    73.8 | 25-31,34-37       
+ ...nents/checkout |       0 |        0 |       0 |       0 |                   
+  CheckoutForm.tsx |       0 |        0 |       0 |       0 | 1-126             
+  ...firmation.tsx |       0 |        0 |       0 |       0 | 1-103             
+  OrderSummary.tsx |       0 |        0 |       0 |       0 | 1-76              
+  ...astercard.tsx |       0 |        0 |       0 |       0 | 1-102             
+  ...ntMethods.tsx |       0 |        0 |       0 |       0 | 1-65              
+  ...entPayPal.tsx |       0 |        0 |       0 |       0 | 1-44              
+  PaymentPlin.tsx  |       0 |        0 |       0 |       0 | 1-110             
+  ...tTransfer.tsx |       0 |        0 |       0 |       0 | 1-102             
+  PaymentVisa.tsx  |       0 |        0 |       0 |       0 | 1-102             
+  PaymentYape.tsx  |       0 |        0 |       0 |       0 | 1-110             
+ ...ents/dashboard |   22.27 |    57.14 |   46.66 |   22.27 |                   
+  ...alLibrary.tsx |       0 |        0 |       0 |       0 | 1-77              
+  ...ritesList.tsx |       0 |        0 |       0 |       0 | 1-98              
+  ProfileForm.tsx  |       0 |        0 |       0 |       0 | 1-64              
+  ...seHistory.tsx |   76.42 |    70.58 |   63.63 |   76.42 | ...,44-47,125-147 
+  SettingsForm.tsx |       0 |        0 |       0 |       0 | 1-131             
+ components/home   |   69.19 |    83.78 |   59.09 |   69.19 |                   
+  Benefits.tsx     |     100 |      100 |     100 |     100 |                   
+  Categories.tsx   |     100 |       75 |     100 |     100 | 42                
+  FAQ.tsx          |   84.61 |       75 |   66.66 |   84.61 | 26-36             
+  ...dProducts.tsx |       0 |        0 |       0 |       0 | 1-198             
+  Hero.tsx         |     100 |      100 |     100 |     100 |                   
+  HowItWorks.tsx   |     100 |      100 |     100 |     100 |                   
+  Newsletter.tsx   |    62.9 |       50 |   33.33 |    62.9 | 13-35             
+  Stats.tsx        |   88.13 |    83.33 |     100 |   88.13 | 38-44             
+  Testimonials.tsx |   83.33 |      100 |   28.57 |   83.33 | ...,48-53,112-117 
+ components/layout |   44.65 |    62.06 |   17.64 |   44.65 |                   
+  ...ardLayout.tsx |       0 |        0 |       0 |       0 | 1-127             
+  Footer.tsx       |     100 |      100 |     100 |     100 |                   
+  Navbar.tsx       |   30.45 |    46.15 |    7.14 |   30.45 | ...62-169,185-273 
+  Sidebar.tsx      |   73.97 |    72.72 |     100 |   73.97 | 40-42,56,81-97    
+ ...onents/product |   13.51 |    83.33 |      25 |   13.51 |                   
+  ...ctGallery.tsx |     100 |      100 |      50 |     100 |                   
+  ProductInfo.tsx  |       0 |        0 |       0 |       0 | 1-137             
+  ...dProducts.tsx |       0 |        0 |       0 |       0 | 1-111             
+ components/ui     |   84.06 |     94.8 |   69.23 |   84.06 |                   
+  Alert.tsx        |     100 |      100 |     100 |     100 |                   
+  Badge.tsx        |     100 |      100 |     100 |     100 |                   
+  Breadcrumb.tsx   |     100 |      100 |     100 |     100 |                   
+  Button.tsx       |     100 |      100 |     100 |     100 |                   
+  Card.tsx         |     100 |      100 |     100 |     100 |                   
+  Input.tsx        |     100 |      100 |     100 |     100 |                   
+  Loader.tsx       |       0 |        0 |       0 |       0 | 1-14              
+  Modal.tsx        |   41.66 |       60 |     100 |   41.66 | 17,34-63          
+  Pagination.tsx   |     100 |      100 |      50 |     100 |                   
+  Select.tsx       |     100 |      100 |     100 |     100 |                   
+  Spinner.tsx      |     100 |      100 |     100 |     100 |                   
+  Table.tsx        |     100 |      100 |     100 |     100 |                   
+  Textarea.tsx     |     100 |      100 |     100 |     100 |                   
+  Toast.tsx        |       0 |        0 |       0 |       0 | 1-42              
+ data              |     100 |      100 |     100 |     100 |                   
+  categorias.ts    |     100 |      100 |     100 |     100 |                   
+  compras.ts       |     100 |      100 |     100 |     100 |                   
+  faqs.ts          |     100 |      100 |     100 |     100 |                   
+  pedidos.ts       |     100 |      100 |     100 |     100 |                   
+  productos.ts     |     100 |      100 |     100 |     100 |                   
+  stats.ts         |     100 |      100 |     100 |     100 |                   
+  testimonios.ts   |     100 |      100 |     100 |     100 |                   
+  usuarios.ts      |     100 |      100 |     100 |     100 |                   
+ services          |   97.85 |    94.87 |     100 |   97.85 |                   
+  admin.service.ts |     100 |      100 |     100 |     100 |                   
+  api.ts           |   90.62 |    66.66 |     100 |   90.62 | 29-31             
+  auth.service.ts  |     100 |      100 |     100 |     100 |                   
+  cart.service.ts  |     100 |      100 |     100 |     100 |                   
+  order.service.ts |     100 |      100 |     100 |     100 |                   
+  ...nt.service.ts |     100 |      100 |     100 |     100 |                   
+  ...ct.service.ts |     100 |      100 |     100 |     100 |                   
+  ...rt.service.ts |     100 |      100 |     100 |     100 |                   
+  user.service.ts  |     100 |      100 |     100 |     100 |                   
+ store             |   89.12 |    88.23 |     100 |   89.12 |                   
+  auth-store.ts    |     100 |    84.21 |     100 |     100 | 47,67,72          
+  cart-store.ts    |   81.69 |    86.27 |     100 |   81.69 | ...17-121,123-139 
+  ...ites-store.ts |     100 |      100 |     100 |     100 |                   
+  ui-store.ts      |     100 |      100 |     100 |     100 |                   
+ types             |       0 |        0 |       0 |       0 |                   
+  index.ts         |       0 |        0 |       0 |       0 |                   
+ utils             |     100 |      100 |     100 |     100 |                   
+  cn.ts            |     100 |      100 |     100 |     100 |                   
+  format.ts        |     100 |      100 |     100 |     100 |                   
+  validators.ts    |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 41.68% ( 2793/6701 )
+Branches     : 73.1% ( 318/435 )
+Functions    : 51.65% ( 125/242 )
+Lines        : 41.68% ( 2793/6701 )
+================================================================================

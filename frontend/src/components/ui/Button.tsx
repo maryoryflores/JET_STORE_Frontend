@@ -1,5 +1,4 @@
 'use client';
-import { motion } from 'framer-motion';
 import { cn } from '@/utils/cn';
 import { ReactNode, ButtonHTMLAttributes, forwardRef } from 'react';
 
@@ -14,12 +13,10 @@ interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onA
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant = 'primary', size = 'md', loading = false, icon, fullWidth = false, className, disabled, type = 'button', ...props }, ref) => {
     return (
-      <motion.button
+      <button
         ref={ref}
-        whileHover={!disabled && !loading ? { scale: 1.02 } : {}}
-        whileTap={!disabled && !loading ? { scale: 0.98 } : {}}
         className={cn(
-          'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DC2626]',
+          'inline-flex items-center justify-center font-semibold rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#DC2626] active:scale-[0.98] hover:scale-[1.02]',
           variant === 'primary' && 'bg-[#DC2626] text-white hover:bg-[#B91C1C] shadow-md hover:shadow-lg',
           variant === 'secondary' && 'bg-[#111111] text-white hover:bg-gray-800 shadow-md hover:shadow-lg',
           variant === 'outline' && 'border-2 border-[#DC2626] text-[#DC2626] hover:bg-[#DC2626] hover:text-white',
@@ -44,7 +41,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           <span className="flex-shrink-0">{icon}</span>
         ) : null}
         {children && <span>{children}</span>}
-      </motion.button>
+      </button>
     );
   }
 );

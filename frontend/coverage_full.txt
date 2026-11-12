@@ -1,0 +1,1034 @@
+The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/da123/Documents/jetstore/Frontend/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mstarts with no auth state
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogin success sets user and token
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogin failure returns error
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogin with server error returns error message
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogin with network error returns default message
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mregister success returns success
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mregister failure returns error
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mregister with server error returns error message
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogout clears auth state
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogout handles API error gracefully
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22mlogout without token does not call API
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts[2m > [22museAuthStore[2m > [22msetUsuario updates user
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCurrency[2m > [22mformatea un monto como soles peruanos (PEN)
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCurrency[2m > [22mformatea cero
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCurrency[2m > [22mformatea montos grandes
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatDate[2m > [22mformatea una fecha
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatDateShort[2m > [22mformatea una fecha corta
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCardNumber[2m > [22magrupa los d├¡gitos en bloques de 4
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCardNumber[2m > [22melimina caracteres no num├®ricos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatCardNumber[2m > [22mtrunca a 16 d├¡gitos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatExpiryDate[2m > [22minserta una barra despu├®s de los dos primeros d├¡gitos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatExpiryDate[2m > [22mretorna solo d├¡gitos si longitud <= 2
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mformatExpiryDate[2m > [22melimina caracteres no num├®ricos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetCardType[2m > [22midentifica tarjetas Visa (inician en 4)
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetCardType[2m > [22midentifica tarjetas Mastercard (51-55)
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetCardType[2m > [22mretorna "unknown" para otros prefijos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetCardType[2m > [22midentifica Mastercard con prefijo 51
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mtruncateText[2m > [22mrecorta el texto y agrega puntos suspensivos
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mtruncateText[2m > [22mretorna texto completo si es menor al l├¡mite
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mtruncateText[2m > [22mretorna texto completo si es igual al l├¡mite
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetInitials[2m > [22mdevuelve las iniciales en may├║sculas
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetInitials[2m > [22mdevuelve una inicial para un solo nombre
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mgetInitials[2m > [22mdevuelve solo las dos primeras iniciales
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mcalculateDiscount[2m > [22mcalcula el porcentaje de descuento
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mcalculateDiscount[2m > [22mretorna 0 si no hay descuento
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts[2m > [22mcalculateDiscount[2m > [22mcalcula descuento del 50%
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mloginSchema[2m > [22macepta credenciales v├ílidas
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mloginSchema[2m > [22mrechaza cuando el nombre de usuario est├í vac├¡o
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mloginSchema[2m > [22mrechaza una contrase├▒a menor a 6 caracteres
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mloginSchema[2m > [22mrechaza campos faltantes
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mregisterSchema[2m > [22macepta un registro v├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mregisterSchema[2m > [22mrechaza cuando las contrase├▒as no coinciden
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mregisterSchema[2m > [22mrechaza un correo inv├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mregisterSchema[2m > [22mrechaza un nombre de usuario menor a 3 caracteres
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mregisterSchema[2m > [22mrechaza contrase├▒a menor a 6 caracteres
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mcheckoutSchema[2m > [22macepta un formulario de pago v├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mcheckoutSchema[2m > [22mrechaza un email de pago inv├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mcheckoutSchema[2m > [22mrechaza telefono muy corto
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mcheckoutSchema[2m > [22macepta codigoPostal opcional
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mprofileSchema[2m > [22mrechaza un correo de perfil inv├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mprofileSchema[2m > [22macepta un perfil v├ílido
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts[2m > [22mprofileSchema[2m > [22mrechaza nombre de usuario corto
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mstarts with empty state
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mtotalItems returns sum of quantities
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22msubtotal returns sum of item subtotals
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mvaciar clears all items
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22magregar returns false when not authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22magregar adds item via API when authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22magregar falls back to local on API error
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22magregar increments quantity for existing local item
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22meliminar returns false when not authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22meliminar removes item via API when authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22meliminar falls back to local on API error
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mactualizarCantidad returns false when not authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mactualizarCantidad returns false when cantidad < 1
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mactualizarCantidad falls back to local on API error
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mcargarCarrito clears items when not authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mcargarCarrito loads from API when authenticated
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts[2m > [22museCartStore[2m > [22mcargarCarrito keeps local items on API error
+stderr | src/components/product/__tests__/RelatedProducts.test.tsx > RelatedProducts > renders the section heading
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders password change section
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders password inputs
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders update password button
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders notification preferences section
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders notification toggles
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders save preferences button
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders danger zone section
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mrenders delete account button
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx[2m > [22mSettingsForm[2m > [22mdoes not show toast initially
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders the section heading
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders title when isOpen is true
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders children content
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders close button
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders the section heading after loading
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders related product titles
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders featured product titles
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders formatted prices for related products
+stderr | src/components/catalog/__tests__/ProductGrid.test.tsx > ProductGrid > renders product titles
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mrenders product titles
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mrenders product authors
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mrenders formatted prices
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mshows "Sin Stock" badge for out-of-stock products
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mshows empty state when no products
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mrenders add-to-cart buttons
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx[2m > [22mProductGrid[2m > [22mdisables cart button for out-of-stock products
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mrenders success message
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mdisplays order number
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mdisplays date
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mdisplays payment method label for visa
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mdisplays payment method label for mastercard
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mshows completed badge
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mrenders download button
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx[2m > [22mOrderConfirmation[2m > [22mrenders navigation links
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders the catalog link
+ [32mÔ£ô[39m src/components/checkout/__tests__/CheckoutForm.test.tsx[2m > [22mCheckoutForm[2m > [22mrenders the checkout form with all sections
+ [32mÔ£ô[39m src/components/checkout/__tests__/CheckoutForm.test.tsx[2m > [22mCheckoutForm[2m > [22mrenders all input fields
+ [32mÔ£ô[39m src/components/checkout/__tests__/CheckoutForm.test.tsx[2m > [22mCheckoutForm[2m > [22mrenders the document type select
+ [32mÔ£ô[39m src/components/checkout/__tests__/CheckoutForm.test.tsx[2m > [22mCheckoutForm[2m > [22mrenders submit button
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders add buttons for in-stock products
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders null when no related products
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders product authors
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders formatted prices
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mrenders brand name
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mrenders navigation links[33m 303[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows login link when not authenticated
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows user name and dropdown button when authenticated
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mrenders category badges
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mrenders the Plin payment form
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mdisplays instruction text
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mrenders QR code section
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mrenders phone number and company name
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mrenders operation number input
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mrenders file upload area
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx[2m > [22mPaymentPlin[2m > [22mdisplays error messages when provided
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mrenders heading
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mrenders email input[33m 407[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mrenders submit button
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders children content
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders title when provided
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders description when provided
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders sidebar navigation links
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders JetStore Digital brand
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx[2m > [22mDashboardLayout[2m > [22mrenders mobile menu button
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mrenders nav items
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mcollapses when isOpen is false
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mexpands when isOpen is true
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mshows close button on mobile when onClose is provided
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mcalls onClose when close button is clicked
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mdoes not show close button when onClose is not provided
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mrenders JetStore brand text
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mrenders version text
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mhighlights active nav item based on pathname
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mhas correct hrefs for nav items
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mdoes not show mobile overlay when isOpen is false
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx[2m > [22mSidebar[2m > [22mshows mobile overlay when isOpen and onClose provided
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx[2m > [22mRelatedProducts[2m > [22mrenders authors for related products
+stderr | src/components/catalog/__tests__/ProductFilters.test.tsx > ProductFilters > shows clear button when filters are active
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mrenders category names
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mdisplays product count for each category
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mcalls onCategoryChange when a category checkbox is clicked[33m 439[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mrenders min and max price inputs
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mcalls onMinPriceChange when min price input changes
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mcalls onMaxPriceChange when max price input changes
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mshows clear button when filters are active
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mhides clear button when no filters are active
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mcalls onClear when clear button is clicked
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx[2m > [22mProductFilters[2m > [22mrenders the filters heading
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx[2m > [22mFeaturedProducts[2m > [22mshows Sin Stock for out of stock products
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mshows error alert when submitting empty email
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mshows error alert for invalid email format
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mcalls onClose when close button is clicked[33m 403[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mdoes not render when isOpen is false
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders without crashing when title is undefined
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders fixed overlay container when open
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22msets body overflow to hidden when open
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mresets body overflow when closed
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mresets body overflow on unmount
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders with sm size
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders with lg size
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mrenders with xl size
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mdoes not render title header when title is not provided
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mopens and closes dropdown on user button click[33m 327[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22msubmits valid email and shows loading then success
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mrenders search input
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mrenders log entries
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mrenders date filters
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mfilters logs by search term
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mfilters logs by action type
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mfilters logs by IP address
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mfilters logs by date from
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mupdates dateFrom input value
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mupdates dateTo input value
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mshows empty message when no logs match
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mrenders all log columns
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mdisplays user names in table
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx[2m > [22mLogsView[2m > [22mdisplays IP addresses in table
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mclears email input after successful submission
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders the product title
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders the author
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders the formatted price
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders the category badge
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders stock info when in stock
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mshows "Agotado" when stock is zero
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mshows "Sin Stock" button text when out of stock
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mshows "Agregar al Carrito" button when in stock
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mincrements quantity when plus button is clicked
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mdecrements quantity when minus button is clicked
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mdoes not decrement quantity below 1
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mcalls agregar when add-to-cart is clicked
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx[2m > [22mProductInfo[2m > [22mrenders star rating
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mdisables submit button while loading
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows logout button in dropdown
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx[2m > [22mModal[2m > [22mdoes not close when clicking modal content
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows admin link for ADMIN role
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx[2m > [22mNewsletter[2m > [22mre-enables submit button after submission completes
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows dashboard links for non-ADMIN role
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows cart and favorites links when authenticated
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mdisplays user email in dropdown
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mdisplays fallback text when email is missing
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mcloses dropdown when clicking outside
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows cart badge when items exist
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mtoggles mobile menu open and closed
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows nav links in mobile menu
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows user info and logout in mobile menu
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mcalls logout from mobile menu
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows admin link in mobile menu for ADMIN
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows dashboard links in mobile menu for non-ADMIN
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows login link in mobile menu when not authenticated
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx[2m > [22mNavbar[2m > [22mshows mobile cart link when authenticated
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mrenders the Yape payment form
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mdisplays instruction text
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mrenders QR code section
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mrenders phone number and company name
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mrenders operation number input
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mrenders file upload area
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx[2m > [22mPaymentYape[2m > [22mdisplays error messages when provided
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mrenders the order summary title
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mdisplays item details
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mdisplays subtotal
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mdisplays free shipping
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mdisplays payment method
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mrenders confirm button
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mcalls onConfirm when confirm button is clicked
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx[2m > [22mOrderSummary[2m > [22mdisables confirm button when no method selected
+stderr | src/components/catalog/__tests__/CatalogoView.test.tsx > CatalogoView > renders the catalog title
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/catalog/__tests__/CatalogoView.test.tsx > CatalogoView > shows loading spinner initially
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx[2m > [22mCatalogoView[2m > [22mrenders the catalog title
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx[2m > [22mCatalogoView[2m > [22mshows loading spinner initially
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx[2m > [22mCatalogoView[2m > [22mrenders products after loading
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx[2m > [22mCatalogoView[2m > [22mrenders product grid with loaded products
+ [32mÔ£ô[39m src/components/dashboard/__tests__/DigitalLibrary.test.tsx[2m > [22mDigitalLibrary[2m > [22mrenders purchased products
+ [32mÔ£ô[39m src/components/dashboard/__tests__/DigitalLibrary.test.tsx[2m > [22mDigitalLibrary[2m > [22mrenders the search input
+ [32mÔ£ô[39m src/components/dashboard/__tests__/DigitalLibrary.test.tsx[2m > [22mDigitalLibrary[2m > [22mrenders download button for each product
+ [32mÔ£ô[39m src/components/dashboard/__tests__/DigitalLibrary.test.tsx[2m > [22mDigitalLibrary[2m > [22mrenders product author
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx[2m > [22mCatalogoView[2m > [22mdisplays product count after loading
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mrenders the transfer payment form
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mdisplays instruction text
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mdisplays bank details
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mdisplays bank labels
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mrenders file upload area
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx[2m > [22mPaymentTransfer[2m > [22mdisplays error messages when provided
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx[2m > [22mPaymentMastercard[2m > [22mrenders the mastercard payment form
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx[2m > [22mPaymentMastercard[2m > [22mrenders all input fields
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx[2m > [22mPaymentMastercard[2m > [22mrenders card number placeholder
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx[2m > [22mPaymentMastercard[2m > [22mrenders placeholder for expiry date
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx[2m > [22mPaymentMastercard[2m > [22mdisplays error messages when provided
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mgetAll calls api.get
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mgetById calls api.get with id
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22msearch calls api.get with query param
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mfilter calls api.post with filters
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mgetByCategory calls api.get with encoded name
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mgetRecent calls api.get
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mgetCategories calls api.get
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22msave calls api.post
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22mdelete calls api.delete
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts[2m > [22mproductService[2m > [22maddStock calls api.post
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx[2m > [22mFavoritesList[2m > [22mrenders favorite products
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx[2m > [22mFavoritesList[2m > [22mdisplays product price
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx[2m > [22mFavoritesList[2m > [22mrenders add to cart button
+stderr | src/components/dashboard/__tests__/FavoritesList.test.tsx > FavoritesList - Empty State > shows empty state when no favorites
+An update to FavoritesList inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx[2m > [22mPaymentVisa[2m > [22mrenders the visa payment form
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx[2m > [22mPaymentVisa[2m > [22mrenders all input fields
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx[2m > [22mPaymentVisa[2m > [22mrenders card number placeholder
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx[2m > [22mPaymentVisa[2m > [22mrenders placeholder for expiry date
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx[2m > [22mPaymentVisa[2m > [22mdisplays error messages when provided
+ [32mÔ£ô[39m src/components/dashboard/__tests__/ProfileForm.test.tsx[2m > [22mProfileForm[2m > [22mrenders the profile form
+ [32mÔ£ô[39m src/components/dashboard/__tests__/ProfileForm.test.tsx[2m > [22mProfileForm[2m > [22mrenders save button
+ [32mÔ£ô[39m src/components/dashboard/__tests__/ProfileForm.test.tsx[2m > [22mProfileForm[2m > [22mrenders form inputs with correct ids
+ [32mÔ£ô[39m src/components/dashboard/__tests__/ProfileForm.test.tsx[2m > [22mProfileForm[2m > [22mdoes not show toast initially
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mrenders the message when visible
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mdoes not render when not visible
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mcalls onClose when close button is clicked
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mauto-closes after the specified duration
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mrenders success type with correct styling
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mrenders error type with correct styling
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mdoes not auto-close when duration is 0
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx[2m > [22mToast[2m > [22mrenders the default success type
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx[2m > [22mFavoritesList[2m > [22mdisplays author name
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx[2m > [22mFavoritesList - Empty State[2m > [22mshows empty state when no favorites
+ [32mÔ£ô[39m src/app/carrito/__tests__/CarritoClient.test.tsx[2m > [22mCarritoClient[2m > [22mrenders login prompt when not authenticated
+ [32mÔ£ô[39m src/app/carrito/__tests__/CarritoClient.test.tsx[2m > [22mCarritoClient[2m > [22mrenders empty cart when authenticated with no items
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMethods.test.tsx[2m > [22mPaymentMethods[2m > [22mrenders all payment methods
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMethods.test.tsx[2m > [22mPaymentMethods[2m > [22mcalls onSelect when a method is clicked
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMethods.test.tsx[2m > [22mPaymentMethods[2m > [22mcalls onSelect with correct method id for mastercard
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMethods.test.tsx[2m > [22mPaymentMethods[2m > [22mcalls onSelect with yape
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mrenders input[33m 407[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mrenders custom placeholder
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mrenders with value
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mcalls onChange after debounce when typing
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mshows clear button when there is local value
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mdoes not show clear button when input is empty
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mclears input and calls onChange when clear button clicked
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mdebounces rapid typing correctly
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx[2m > [22mSearchBar[2m > [22mclears debounce timeout on unmount
+stderr | src/app/login/__tests__/LoginClient.test.tsx > LoginClient > renders without crashing
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+Received `false` for a non-boolean attribute `loading`.
+
+If you want to write it to the DOM, pass a string instead: loading="false" or loading={value.toString()}.
+
+If you used to conditionally omit it with loading={condition && value}, pass loading={condition ? value : undefined} instead.
+
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders with text[33m 320[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders primary variant by default
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders secondary variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders outline variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders ghost variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mshows loading spinner when loading
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mdisables when disabled prop is true
+stderr | src/app/registro/__tests__/RegistroClient.test.tsx > RegistroClient > renders without crashing
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+Received `false` for a non-boolean attribute `loading`.
+
+If you want to write it to the DOM, pass a string instead: loading="false" or loading={value.toString()}.
+
+If you used to conditionally omit it with loading={condition && value}, pass loading={condition ? value : undefined} instead.
+
+ [32mÔ£ô[39m src/app/registro/__tests__/RegistroClient.test.tsx[2m > [22mRegistroClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/registro/__tests__/RegistroClient.test.tsx[2m > [22mRegistroClient[2m > [22mrenders register form
+ [32mÔ£ô[39m src/app/registro/__tests__/RegistroClient.test.tsx[2m > [22mRegistroClient[2m > [22mrenders form inputs
+ [32mÔ£ô[39m src/app/registro/__tests__/RegistroClient.test.tsx[2m > [22mRegistroClient[2m > [22mrenders submit button[33m 313[2mms[22m[39m
+ [32mÔ£ô[39m src/app/registro/__tests__/RegistroClient.test.tsx[2m > [22mRegistroClient[2m > [22mrenders login link
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mrenders filter tabs
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mrenders purchase data
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mrenders search input
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mfilters by completado status
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mfilters by search term
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mshows total for each purchase
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mshows product count for each purchase
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders login form
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders form inputs
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders submit button
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders guest login button
+ [32mÔ£ô[39m src/app/login/__tests__/LoginClient.test.tsx[2m > [22mLoginClient[2m > [22mrenders register link
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mcalls onClick when clicked
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders full width when fullWidth is true
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mrenders icon when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22mdoes not render icon when loading
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx[2m > [22mButton[2m > [22muses custom type
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mclicking Ver detalle opens modal with purchase info[33m 427[2mms[22m[39m
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mshows product details in modal
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mresets page when filter changes
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mresets page when searching
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx[2m > [22mPurchaseHistory[2m > [22mshows pedido number column header
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mpedidos data[2m > [22mexports pedidos array
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mpedidos data[2m > [22meach pedido has required fields
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mpagos data[2m > [22mexports pagos array
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mpagos data[2m > [22meach pago has required fields
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesVentas data[2m > [22mexports sales reports
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesVentas data[2m > [22meach report has required fields
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesProductos data[2m > [22mexports product reports
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesProductos data[2m > [22meach report has required fields
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesClientes data[2m > [22mexports client reports
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts[2m > [22mreportesClientes data[2m > [22meach report has required fields
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders section heading
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders testimonial cards
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders scroll navigation buttons
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mscroll buttons are disabled at initial state
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders dot navigation indicators[33m 323[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mscroll buttons call scrollBy on click
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders star ratings for testimonials
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders testimonial cargo/role information
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx[2m > [22mTestimonials[2m > [22mrenders testimonial quotes
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22mgetStats returns mock data
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22mgetUsers calls api.get
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22msaveProduct delegates to productService.save
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22mdeleteProduct delegates to productService.delete
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22maddStock delegates to productService.addStock
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts[2m > [22madminService[2m > [22mgetCategories delegates to productService.getCategories
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mhas correct baseURL
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mhas correct timeout
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mhas JSON content type header
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mrequest interceptor adds Bearer token when available
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mrequest interceptor does not add token when no token
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mresponse interceptor passes through successful responses
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts[2m > [22mapi axios instance[2m > [22mresponse interceptor rejects non-401 errors
+stderr | src/app/admin/__tests__/AdminClient.test.tsx > AdminClient > renders without crashing
+An update to AdminDashboardPage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/app/admin/__tests__/AdminClient.test.tsx > AdminClient > renders StatsCards and Charts
+An update to AdminDashboardPage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/app/admin/__tests__/AdminClient.test.tsx > AdminClient > renders table headers
+An update to AdminDashboardPage inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/app/admin/__tests__/AdminClient.test.tsx[2m > [22mAdminClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/admin/__tests__/AdminClient.test.tsx[2m > [22mAdminClient[2m > [22mrenders StatsCards and Charts
+ [32mÔ£ô[39m src/app/admin/__tests__/AdminClient.test.tsx[2m > [22mAdminClient[2m > [22mrenders table headers
+ [32mÔ£ô[39m src/app/admin/__tests__/AdminClient.test.tsx[2m > [22mAdminClient[2m > [22mshows fallback data when API fails
+ [32mÔ£ô[39m src/app/checkout/__tests__/CheckoutClient.test.tsx[2m > [22mCheckoutClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/checkout/__tests__/CheckoutClient.test.tsx[2m > [22mCheckoutClient[2m > [22mrenders payment methods step
+ [32mÔ£ô[39m src/app/checkout/__tests__/CheckoutClient.test.tsx[2m > [22mCheckoutClient[2m > [22mrenders step indicators
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx[2m > [22mAdminSidebar[2m > [22mrenders JetStore branding
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx[2m > [22mAdminSidebar[2m > [22mrenders Admin label
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx[2m > [22mAdminSidebar[2m > [22mrenders all navigation links
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx[2m > [22mAdminSidebar[2m > [22mhighlights active route
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx[2m > [22mAdminSidebar[2m > [22mhides labels when collapsed
+stderr | src/app/contacto/__tests__/ContactoClient.test.tsx > ContactoClient > renders without crashing
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts[2m > [22mauthService[2m > [22mlogin calls api.post with credentials
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts[2m > [22mauthService[2m > [22mregister calls api.post with data
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts[2m > [22mauthService[2m > [22mgetProfile calls api.get
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts[2m > [22mauthService[2m > [22mlogout calls api.post with token header
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts[2m > [22mauthService[2m > [22mlistUsers calls api.get
+ [32mÔ£ô[39m src/components/ui/__tests__/Loader.test.tsx[2m > [22mLoader[2m > [22mrenders the loading spinner
+ [32mÔ£ô[39m src/components/ui/__tests__/Loader.test.tsx[2m > [22mLoader[2m > [22mrenders a full-screen overlay
+ [32mÔ£ô[39m src/components/ui/__tests__/Loader.test.tsx[2m > [22mLoader[2m > [22mapplies backdrop blur
+ [32mÔ£ô[39m src/components/ui/__tests__/Loader.test.tsx[2m > [22mLoader[2m > [22mrenders the spinner with correct classes
+ [32mÔ£ô[39m src/app/contacto/__tests__/ContactoClient.test.tsx[2m > [22mContactoClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/contacto/__tests__/ContactoClient.test.tsx[2m > [22mContactoClient[2m > [22mrenders heading
+ [32mÔ£ô[39m src/app/contacto/__tests__/ContactoClient.test.tsx[2m > [22mContactoClient[2m > [22mrenders contact form
+ [32mÔ£ô[39m src/app/contacto/__tests__/ContactoClient.test.tsx[2m > [22mContactoClient[2m > [22mrenders contact information
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mrenders section heading
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mrenders FAQ questions
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mrenders categories
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mexpands an FAQ item when clicked
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mcollapses an expanded FAQ item when clicked again
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22msets aria-expanded to true when FAQ is open[33m 413[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx[2m > [22mFAQ[2m > [22mshows different FAQ answer when switching between questions
+stderr | src/app/producto/[id]/__tests__/ProductoClient.test.tsx > ProductoClient > renders without crashing
+A suspended resource finished loading inside a test, but the event was not wrapped in act(...).
+
+When testing, code that resolves suspended data should be wrapped into act(...):
+
+act(() => {
+  /* finish loading suspended data */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+A component suspended inside an `act` scope, but the `act` call was not awaited. When testing React components that depend on asynchronous data, you must await the result:
+
+await act(() => ...)
+
+ [32mÔ£ô[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/__tests__/page.test.tsx[2m > [22mHomePage[2m > [22mrenders all home sections
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders search input
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders Nuevo Libro button
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders table with empty state message
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mreturns null when totalPages <= 1
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mrenders page buttons
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mhighlights current page
+ [32mÔ£ô[39m src/app/producto/[id]/__tests__/ProductoClient.test.tsx[2m > [22mProductoClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/components/admin/__tests__/ProductsTable.test.tsx[2m > [22mProductsTable[2m > [22mrenders search input
+ [32mÔ£ô[39m src/components/admin/__tests__/ProductsTable.test.tsx[2m > [22mProductsTable[2m > [22mrenders Nuevo Libro button
+ [32mÔ£ô[39m src/components/admin/__tests__/ProductsTable.test.tsx[2m > [22mProductsTable[2m > [22mrenders table with empty state message
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mstarts with correct defaults
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mtoggleCart toggles cart open state
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mtoggleMobileMenu toggles mobile menu
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mtoggleSidebar toggles sidebar
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mcloseCart sets isCartOpen to false
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts[2m > [22museUIStore[2m > [22mcloseMobileMenu sets isMobileMenuOpen to false
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mcalls onPageChange when page is clicked[33m 351[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mdisables previous button on first page
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mdisables next button on last page
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx[2m > [22mPagination[2m > [22mshows ellipsis for many pages
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminHeader.test.tsx[2m > [22mAdminHeader[2m > [22mrenders the title
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminHeader.test.tsx[2m > [22mAdminHeader[2m > [22mrenders user initials
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mrenders input element[33m 346[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mrenders label when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mshows error message when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mapplies error styling when error is provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mrenders icon when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22madds pl-10 class when icon is present
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminHeader.test.tsx[2m > [22mAdminHeader[2m > [22mcalls onToggleSidebar when menu button is clicked[33m 376[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminHeader.test.tsx[2m > [22mAdminHeader[2m > [22mshows dropdown with user info on avatar click
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mpasses value and onChange
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx[2m > [22mInput[2m > [22mapplies custom className
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx[2m > [22mTable[2m > [22mrenders column headers
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx[2m > [22mTable[2m > [22mrenders data rows
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx[2m > [22mTable[2m > [22mrenders empty message when data is empty
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx[2m > [22mTable[2m > [22mshows default empty message
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx[2m > [22mTable[2m > [22mrenders custom render function
+stderr | src/components/admin/__tests__/UsersTable.test.tsx > UsersTable > renders search input
+An update to UsersTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/admin/__tests__/UsersTable.test.tsx[2m > [22mUsersTable[2m > [22mrenders search input
+ [32mÔ£ô[39m src/components/admin/__tests__/UsersTable.test.tsx[2m > [22mUsersTable[2m > [22mrenders user data from service
+ [32mÔ£ô[39m src/components/admin/__tests__/UsersTable.test.tsx[2m > [22mUsersTable[2m > [22mrenders user emails
+ [32mÔ£ô[39m src/components/admin/__tests__/ReportsView.test.tsx[2m > [22mReportsView[2m > [22mrenders Descargar Reporte button
+ [32mÔ£ô[39m src/components/admin/__tests__/ReportsView.test.tsx[2m > [22mReportsView[2m > [22mrenders Clientes Frecuentes heading
+ [32mÔ£ô[39m src/components/admin/__tests__/ReportsView.test.tsx[2m > [22mReportsView[2m > [22mrenders chart components
+ [32mÔ£ô[39m src/components/admin/__tests__/ReportsView.test.tsx[2m > [22mReportsView[2m > [22mrenders client report data
+ [32mÔ£ô[39m src/app/admin/configuracion/__tests__/AdminConfigClient.test.tsx[2m > [22mAdminConfigClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/admin/configuracion/__tests__/AdminConfigClient.test.tsx[2m > [22mAdminConfigClient[2m > [22mrenders form fields
+ [32mÔ£ô[39m src/app/admin/configuracion/__tests__/AdminConfigClient.test.tsx[2m > [22mAdminConfigClient[2m > [22mrenders save button
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders message
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders success type
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders error type
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders warning type
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders info type
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mhides when isVisible is false
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx[2m > [22mAlert[2m > [22mrenders close button when onClose is provided
+ [32mÔ£ô[39m src/app/checkout/success/__tests__/SuccessClient.test.tsx[2m > [22mSuccessClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/checkout/success/__tests__/SuccessClient.test.tsx[2m > [22mSuccessClient[2m > [22mrenders OrderConfirmation
+ [32mÔ£ô[39m src/app/checkout/success/__tests__/SuccessClient.test.tsx[2m > [22mSuccessClient[2m > [22mrenders navigation links
+ [32mÔ£ô[39m src/app/checkout/success/__tests__/SuccessClient.test.tsx[2m > [22mSuccessClient[2m > [22mgenerates an order number
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts[2m > [22museFavoritesStore[2m > [22mstarts with empty items
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts[2m > [22museFavoritesStore[2m > [22mtoggle adds a product to favorites
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts[2m > [22museFavoritesStore[2m > [22mtoggle removes a product from favorites
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts[2m > [22museFavoritesStore[2m > [22misFavorite returns true when product is in favorites
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts[2m > [22museFavoritesStore[2m > [22misFavorite returns false when product is not in favorites
+ [32mÔ£ô[39m src/services/__tests__/payment.service.test.ts[2m > [22mpaymentService[2m > [22mprocessPayment calls api.post
+ [32mÔ£ô[39m src/services/__tests__/payment.service.test.ts[2m > [22mpaymentService[2m > [22mconfirmPayment calls api.post with optional referencia
+ [32mÔ£ô[39m src/services/__tests__/payment.service.test.ts[2m > [22mpaymentService[2m > [22mconfirmPayment works without referencia
+ [32mÔ£ô[39m src/services/__tests__/order.service.test.ts[2m > [22morderService[2m > [22mcreatePayment calls api.post
+ [32mÔ£ô[39m src/services/__tests__/order.service.test.ts[2m > [22morderService[2m > [22mconfirmPayment calls api.post
+ [32mÔ£ô[39m src/services/__tests__/order.service.test.ts[2m > [22morderService[2m > [22mconfirmPayment works without referencia
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts[2m > [22mcartService[2m > [22mgetCart calls api.get with usuarioId
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts[2m > [22mcartService[2m > [22maddItem calls api.post with payload
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts[2m > [22mcartService[2m > [22maddItem defaults cantidad to 1
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts[2m > [22mcartService[2m > [22mremoveItem calls api.delete
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders children
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders default variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders success variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders warning variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders danger variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders info variant
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx[2m > [22mBadge[2m > [22mrenders md size
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts[2m > [22mproductos data[2m > [22mexports an array of products
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts[2m > [22mproductos data[2m > [22meach product has required fields
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts[2m > [22mproductos data[2m > [22mhas unique ids
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts[2m > [22mproductos data[2m > [22mhas 15 products
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts[2m > [22mproductos data[2m > [22mproducts have discount field when on offer
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mrenders select element[33m 359[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mrenders all options
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mrenders label when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mrenders placeholder option when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mshows error message when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx[2m > [22mSelect[2m > [22mapplies error styling
+ [32mÔ£ô[39m src/app/dashboard/__tests__/DashboardClient.test.tsx[2m > [22mDashboardClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/dashboard/__tests__/DashboardClient.test.tsx[2m > [22mDashboardClient[2m > [22mrenders welcome message
+ [32mÔ£ô[39m src/app/dashboard/__tests__/DashboardClient.test.tsx[2m > [22mDashboardClient[2m > [22mrenders quick links
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx[2m > [22mSpinner[2m > [22mrenders svg spinner
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx[2m > [22mSpinner[2m > [22mrenders with default md size
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx[2m > [22mSpinner[2m > [22mrenders with sm size
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx[2m > [22mSpinner[2m > [22mrenders with lg size
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx[2m > [22mSpinner[2m > [22mapplies custom className
+ [32mÔ£ô[39m src/components/admin/__tests__/CategoriesTable.test.tsx[2m > [22mCategoriesTable[2m > [22mrenders the Agregar Categor├¡a button
+ [32mÔ£ô[39m src/components/admin/__tests__/CategoriesTable.test.tsx[2m > [22mCategoriesTable[2m > [22mrenders category data from static data
+ [32mÔ£ô[39m src/components/admin/__tests__/CategoriesTable.test.tsx[2m > [22mCategoriesTable[2m > [22mrenders category descriptions
+ [32mÔ£ô[39m src/components/home/__tests__/Categories.test.tsx[2m > [22mCategories[2m > [22mrenders section heading
+ [32mÔ£ô[39m src/components/home/__tests__/Categories.test.tsx[2m > [22mCategories[2m > [22mrenders category cards
+ [32mÔ£ô[39m src/components/home/__tests__/Categories.test.tsx[2m > [22mCategories[2m > [22meach category links to catalog with slug[33m 316[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx[2m > [22mCard[2m > [22mrenders children
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx[2m > [22mCard[2m > [22mapplies padding by default
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx[2m > [22mCard[2m > [22mremoves padding when padding=false
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx[2m > [22mCard[2m > [22mapplies hover effect when hover=true
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx[2m > [22mCard[2m > [22mapplies custom className
+ [32mÔ£ô[39m src/app/dashboard/configuracion/__tests__/ConfiguracionClient.test.tsx[2m > [22mConfiguracionClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/dashboard/biblioteca/__tests__/BibliotecaClient.test.tsx[2m > [22mBibliotecaClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/components/admin/__tests__/OrdersTable.test.tsx[2m > [22mOrdersTable[2m > [22mrenders orders heading in search
+ [32mÔ£ô[39m src/components/admin/__tests__/OrdersTable.test.tsx[2m > [22mOrdersTable[2m > [22mrenders order data
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts[2m > [22mcompras data[2m > [22mexports an array of purchases
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts[2m > [22mcompras data[2m > [22meach compra has required fields
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts[2m > [22mcompras data[2m > [22mall compras are completed
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts[2m > [22mcompras data[2m > [22meach compra has at least one product
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts[2m > [22mcategorias data[2m > [22mexports an array of categories
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts[2m > [22mcategorias data[2m > [22meach category has required fields
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts[2m > [22mcategorias data[2m > [22mhas unique ids
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts[2m > [22mcategorias data[2m > [22mincludes Tecnologia category
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts[2m > [22mstats data[2m > [22mexports stats array
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts[2m > [22mstats data[2m > [22meach stat has required fields
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts[2m > [22mbeneficios data[2m > [22mexports beneficios array
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts[2m > [22mbeneficios data[2m > [22meach beneficio has required fields
+ [32mÔ£ô[39m src/app/dashboard/compras/__tests__/ComprasClient.test.tsx[2m > [22mComprasClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/dashboard/favoritos/__tests__/FavoritosClient.test.tsx[2m > [22mFavoritosClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/components/admin/__tests__/OrdersTable.test.tsx[2m > [22mOrdersTable[2m > [22mfilters orders by search[33m 536[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx[2m > [22mBreadcrumb[2m > [22mrenders home icon[33m 303[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx[2m > [22mBreadcrumb[2m > [22mrenders item labels
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx[2m > [22mBreadcrumb[2m > [22mrenders links when href is provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx[2m > [22mBreadcrumb[2m > [22mrenders bold text for current page (no href)
+ [32mÔ£ô[39m src/app/dashboard/perfil/__tests__/PerfilClient.test.tsx[2m > [22mPerfilClient[2m > [22mrenders without crashing
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders brand name
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders quick links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders category links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders copyright
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx[2m > [22mFooter[2m > [22mrenders brand name
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx[2m > [22mFooter[2m > [22mrenders quick links
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx[2m > [22mFooter[2m > [22mrenders category links
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx[2m > [22mFooter[2m > [22mrenders copyright
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx[2m > [22mCharts[2m > [22mrenders SalesChart heading
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx[2m > [22mCharts[2m > [22mrenders TopProductsChart heading
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx[2m > [22mCharts[2m > [22mrenders month labels
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx[2m > [22mCharts[2m > [22mrenders product names
+ [32mÔ£ô[39m src/components/product/__tests__/ProductGallery.test.tsx[2m > [22mProductGallery[2m > [22mrenders title placeholder when no images
+ [32mÔ£ô[39m src/components/product/__tests__/ProductGallery.test.tsx[2m > [22mProductGallery[2m > [22mrenders image when provided
+ [32mÔ£ô[39m src/components/product/__tests__/ProductGallery.test.tsx[2m > [22mProductGallery[2m > [22mrenders thumbnails for multiple images
+ [32mÔ£ô[39m src/components/home/__tests__/Benefits.test.tsx[2m > [22mBenefits[2m > [22mrenders section heading
+ [32mÔ£ô[39m src/components/home/__tests__/Benefits.test.tsx[2m > [22mBenefits[2m > [22mrenders benefit cards
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx[2m > [22mCartSummary[2m > [22mrenders subtotal
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx[2m > [22mCartSummary[2m > [22mrenders total
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx[2m > [22mCartSummary[2m > [22mrenders checkout button
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx[2m > [22mCartSummary[2m > [22mrenders continue shopping link
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx[2m > [22mHero[2m > [22mrenders heading
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx[2m > [22mHero[2m > [22mrenders description
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx[2m > [22mHero[2m > [22mrenders catalog link
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx[2m > [22mHero[2m > [22mrenders offers link
+ [32mÔ£ô[39m src/components/cart/__tests__/CartItem.test.tsx[2m > [22mCartItem[2m > [22mrenders item title
+ [32mÔ£ô[39m src/components/cart/__tests__/CartItem.test.tsx[2m > [22mCartItem[2m > [22mrenders author
+ [32mÔ£ô[39m src/components/cart/__tests__/CartItem.test.tsx[2m > [22mCartItem[2m > [22mrenders quantity
+ [32mÔ£ô[39m src/services/__tests__/report.service.test.ts[2m > [22mreportService[2m > [22mgetSalesReport returns mock data
+ [32mÔ£ô[39m src/services/__tests__/report.service.test.ts[2m > [22mreportService[2m > [22mgetTopProducts returns mock data
+ [32mÔ£ô[39m src/services/__tests__/report.service.test.ts[2m > [22mreportService[2m > [22mgetTopClients returns mock data
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx[2m > [22mTextarea[2m > [22mrenders textarea element[33m 397[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx[2m > [22mTextarea[2m > [22mrenders label when provided
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx[2m > [22mTextarea[2m > [22mshows error message
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx[2m > [22mTextarea[2m > [22mapplies error styling
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts[2m > [22musuarios data[2m > [22mexports an array of users
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts[2m > [22musuarios data[2m > [22meach user has required fields
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts[2m > [22musuarios data[2m > [22mincludes an admin user
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts[2m > [22musuarios data[2m > [22mincludes client users
+ [32mÔ£ô[39m src/services/__tests__/user.service.test.ts[2m > [22muserService[2m > [22mgetProfile calls api.get
+ [32mÔ£ô[39m src/services/__tests__/user.service.test.ts[2m > [22muserService[2m > [22mlistUsers calls api.get
+ [32mÔ£ô[39m src/app/admin/productos/__tests__/ProductosClient.test.tsx[2m > [22mProductosClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/admin/categorias/__tests__/CategoriasClient.test.tsx[2m > [22mCategoriasClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts[2m > [22mcn[2m > [22mune m├║ltiples clases de texto y omite valores falsos
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts[2m > [22mcn[2m > [22mreturns empty string with no args
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts[2m > [22mcn[2m > [22mreturns single class
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts[2m > [22mcn[2m > [22mfilters out empty strings
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts[2m > [22mcn[2m > [22mhandles boolean true
+ [32mÔ£ô[39m src/app/admin/usuarios/__tests__/UsuariosClient.test.tsx[2m > [22mUsuariosClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/admin/reportes/__tests__/ReportesClient.test.tsx[2m > [22mReportesClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/components/admin/__tests__/StatsCards.test.tsx[2m > [22mStatsCards[2m > [22mrenders stat labels
+ [32mÔ£ô[39m src/components/admin/__tests__/StatsCards.test.tsx[2m > [22mStatsCards[2m > [22mrenders stat values
+ [32mÔ£ô[39m src/app/admin/pagos/__tests__/PagosClient.test.tsx[2m > [22mPagosClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/components/home/__tests__/HowItWorks.test.tsx[2m > [22mHowItWorks[2m > [22mrenders section heading
+ [32mÔ£ô[39m src/components/home/__tests__/HowItWorks.test.tsx[2m > [22mHowItWorks[2m > [22mrenders step titles
+ [32mÔ£ô[39m src/app/admin/pedidos/__tests__/PedidosClient.test.tsx[2m > [22mPedidosClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/app/admin/logs/__tests__/LogsClient.test.tsx[2m > [22mLogsClient[2m > [22mrenders without crashing
+ [32mÔ£ô[39m src/data/__tests__/faqs.test.ts[2m > [22mfaqs data[2m > [22mexports faqs array
+ [32mÔ£ô[39m src/data/__tests__/faqs.test.ts[2m > [22mfaqs data[2m > [22meach faq has required fields
+ [32mÔ£ô[39m src/data/__tests__/faqs.test.ts[2m > [22mfaqs data[2m > [22mhas unique categories
+ [32mÔ£ô[39m src/data/__tests__/testimonios.test.ts[2m > [22mtestimonios data[2m > [22mexports testimonios array
+ [32mÔ£ô[39m src/data/__tests__/testimonios.test.ts[2m > [22mtestimonios data[2m > [22meach testimonio has required fields
+ [32mÔ£ô[39m src/components/home/__tests__/Stats.test.tsx[2m > [22mStats[2m > [22mrenders stat labels
+ [32mÔ£ô[39m src/components/admin/__tests__/PaymentsTable.test.tsx[2m > [22mPaymentsTable[2m > [22mrenders payment data
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductSort.test.tsx[2m > [22mProductSort[2m > [22mrenders select with sort options
+
+[2m Test Files [22m [1m[32m109 passed[39m[22m[90m (109)[39m
+[2m      Tests [22m [1m[32m591 passed[39m[22m[90m (591)[39m
+[2m   Start at [22m 16:49:52
+[2m   Duration [22m 25.12s[2m (transform 9.33s, setup 26.61s, collect 42.12s, tests 26.43s, environment 248.25s, prepare 26.57s)[22m
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   86.13 |     80.6 |   53.77 |   86.13 |                   
+ app               |     100 |      100 |     100 |     100 |                   
+  page.tsx         |     100 |      100 |     100 |     100 |                   
+ app/admin         |   70.45 |     62.5 |      50 |   70.45 |                   
+  AdminClient.tsx  |   98.41 |    83.33 |     100 |   98.41 | 17                
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-33              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...min/categorias |      50 |       50 |      50 |      50 |                   
+  ...iasClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |   87.17 |    33.33 |   11.11 |   87.17 |                   
+  ...figClient.tsx |   91.89 |       50 |    12.5 |   91.89 | 20-23,31-33       
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/logs    |      50 |       50 |      50 |      50 |                   
+  LogsClient.tsx   |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pagos   |      50 |       50 |      50 |      50 |                   
+  PagosClient.tsx  |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pedidos |      50 |       50 |      50 |      50 |                   
+  ...dosClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...dmin/productos |      50 |       50 |      50 |      50 |                   
+  ...tosClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/reportes |      50 |       50 |      50 |      50 |                   
+  ...tesClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/usuarios |      50 |       50 |      50 |      50 |                   
+  ...iosClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/carrito       |   79.22 |       50 |      50 |   79.22 |                   
+  ...itoClient.tsx |   83.56 |    66.66 |     100 |   83.56 | 78-89             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/catalogo      |       0 |        0 |       0 |       0 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/checkout      |   54.25 |    53.33 |   16.66 |   54.25 |                   
+  ...outClient.tsx |   55.43 |    57.14 |      20 |   55.43 | ...,49-88,171-210 
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...eckout/success |   89.09 |    71.42 |      50 |   89.09 |                   
+  ...essClient.tsx |   96.07 |    83.33 |     100 |   96.07 | 33-34             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/contacto      |   88.73 |    66.66 |    12.5 |   88.73 |                   
+  ...ctoClient.tsx |   94.02 |      100 |   14.28 |   94.02 | 16-19             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/dashboard     |   71.42 |       40 |   33.33 |   71.42 |                   
+  ...ardClient.tsx |     100 |    66.66 |     100 |     100 | 21                
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-18              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...ard/biblioteca |      50 |       50 |      50 |      50 |                   
+  ...ecaClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...hboard/compras |      50 |       50 |      50 |      50 |                   
+  ...rasClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |      50 |       50 |      50 |      50 |                   
+  ...ionClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...oard/favoritos |      50 |       50 |      50 |      50 |                   
+  ...tosClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...shboard/perfil |      50 |       50 |      50 |      50 |                   
+  PerfilClient.tsx |     100 |      100 |     100 |     100 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/login         |   65.69 |     12.5 |   16.66 |   65.69 |                   
+  LoginClient.tsx  |   67.66 |    14.28 |      20 |   67.66 | 33-52,55-74,94-96 
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/producto/[id] |   17.97 |       25 |      50 |   17.97 |                   
+  ...ctoClient.tsx |   19.04 |    33.33 |     100 |   19.04 | 21-48,52-98       
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/registro      |   82.03 |     8.33 |   16.66 |   82.03 |                   
+  ...troClient.tsx |   84.67 |     9.09 |      20 |   84.67 | 33-51             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ components/admin  |   81.37 |    82.52 |   48.75 |   81.37 |                   
+  AdminHeader.tsx  |     100 |     87.5 |      75 |     100 | 54                
+  AdminSidebar.tsx |     100 |      100 |     100 |     100 |                   
+  ...riesTable.tsx |   92.59 |     37.5 |      25 |   92.59 | 39-42             
+  Charts.tsx       |     100 |      100 |     100 |     100 |                   
+  LogsView.tsx     |     100 |      100 |     100 |     100 |                   
+  OrdersTable.tsx  |   94.73 |    91.66 |   77.77 |   94.73 | 42-45             
+  ...entsTable.tsx |     100 |    83.33 |     100 |     100 | 29                
+  ...uctsTable.tsx |   57.87 |    38.46 |    6.89 |   57.87 | ...16-218,225-241 
+  ReportsView.tsx  |     100 |      100 |      75 |     100 |                   
+  StatsCards.tsx   |     100 |      100 |     100 |     100 |                   
+  UsersTable.tsx   |      75 |    84.61 |   83.33 |      75 | 28-36,43-48       
+ components/cart   |     100 |      100 |   33.33 |     100 |                   
+  CartItem.tsx     |     100 |      100 |      25 |     100 |                   
+  CartSummary.tsx  |     100 |      100 |      50 |     100 |                   
+ ...onents/catalog |   80.36 |    73.68 |   39.28 |   80.36 |                   
+  CatalogoView.tsx |   63.91 |    54.54 |   16.66 |   63.91 | ...15-117,201-229 
+  ...ctFilters.tsx |     100 |    81.81 |   57.14 |     100 | 55-63             
+  ProductGrid.tsx  |   81.31 |    76.92 |      25 |   81.31 | 29-44,68          
+  ProductSort.tsx  |     100 |      100 |      50 |     100 |                   
+  SearchBar.tsx    |     100 |      100 |     100 |     100 |                   
+ ...nents/checkout |   86.68 |    45.65 |   29.16 |   86.68 |                   
+  CheckoutForm.tsx |     100 |     8.33 |     100 |     100 | 39-114            
+  ...firmation.tsx |     100 |       50 |      50 |     100 | 72                
+  OrderSummary.tsx |     100 |       80 |     100 |     100 | 61                
+  ...astercard.tsx |    86.3 |       50 |   14.28 |    86.3 | ...27-29,32-34,44 
+  ...ntMethods.tsx |   98.07 |     87.5 |     100 |   98.07 | 52                
+  ...entPayPal.tsx |       0 |        0 |       0 |       0 | 1-44              
+  PaymentPlin.tsx  |    84.7 |       40 |    12.5 |    84.7 | 22-25,28-32,94-97 
+  ...tTransfer.tsx |   83.75 |       50 |   14.28 |   83.75 | 20-23,26-30,86-89 
+  PaymentVisa.tsx  |    86.3 |       50 |   14.28 |    86.3 | ...27-29,32-34,44 
+  PaymentYape.tsx  |    84.7 |       40 |    12.5 |    84.7 | 22-25,28-32,94-97 
+ ...ents/dashboard |   87.91 |    83.92 |   46.87 |   87.91 |                   
+  ...alLibrary.tsx |   76.27 |       75 |   33.33 |   76.27 | 32-35,39-49       
+  ...ritesList.tsx |   90.78 |       90 |   33.33 |   90.78 | 25,51-56          
+  ProfileForm.tsx  |   81.63 |       20 |   33.33 |   81.63 | 34-42             
+  ...seHistory.tsx |     100 |    95.65 |    90.9 |     100 | 77                
+  SettingsForm.tsx |   81.73 |      100 |   11.11 |   81.73 | ...,37-41,114-117 
+ components/home   |   91.97 |    87.87 |   68.96 |   91.97 |                   
+  Benefits.tsx     |     100 |      100 |     100 |     100 |                   
+  Categories.tsx   |     100 |       75 |     100 |     100 | 42                
+  FAQ.tsx          |     100 |      100 |     100 |     100 |                   
+  ...dProducts.tsx |   80.25 |    68.42 |      50 |   80.25 | 51-66,92,145-158  
+  Hero.tsx         |     100 |      100 |     100 |     100 |                   
+  HowItWorks.tsx   |     100 |      100 |     100 |     100 |                   
+  Newsletter.tsx   |     100 |      100 |     100 |     100 |                   
+  Stats.tsx        |   88.13 |    83.33 |     100 |   88.13 | 38-44             
+  Testimonials.tsx |   83.33 |      100 |   28.57 |   83.33 | ...,48-53,112-117 
+ components/layout |   91.76 |    96.96 |   42.85 |   91.76 |                   
+  ...ardLayout.tsx |   58.76 |     87.5 |      25 |   58.76 | 69-112            
+  Footer.tsx       |     100 |      100 |     100 |     100 |                   
+  Navbar.tsx       |     100 |    97.61 |      40 |     100 | 225               
+  Sidebar.tsx      |     100 |      100 |     100 |     100 |                   
+ ...onents/product |   80.18 |    86.11 |   63.63 |   80.18 |                   
+  ...ctGallery.tsx |     100 |      100 |      50 |     100 |                   
+  ProductInfo.tsx  |   87.85 |    82.35 |      80 |   87.85 | 30-42             
+  ...dProducts.tsx |   63.52 |    77.77 |      50 |   63.52 | 35-51,57-70       
+ components/ui     |     100 |      100 |   84.61 |     100 |                   
+  Alert.tsx        |     100 |      100 |     100 |     100 |                   
+  Badge.tsx        |     100 |      100 |     100 |     100 |                   
+  Breadcrumb.tsx   |     100 |      100 |     100 |     100 |                   
+  Button.tsx       |     100 |      100 |     100 |     100 |                   
+  Card.tsx         |     100 |      100 |     100 |     100 |                   
+  Input.tsx        |     100 |      100 |     100 |     100 |                   
+  Loader.tsx       |     100 |      100 |     100 |     100 |                   
+  Modal.tsx        |     100 |      100 |     100 |     100 |                   
+  Pagination.tsx   |     100 |      100 |      50 |     100 |                   
+  Select.tsx       |     100 |      100 |     100 |     100 |                   
+  Spinner.tsx      |     100 |      100 |     100 |     100 |                   
+  Table.tsx        |     100 |      100 |     100 |     100 |                   
+  Textarea.tsx     |     100 |      100 |     100 |     100 |                   
+  Toast.tsx        |     100 |      100 |     100 |     100 |                   
+ data              |     100 |      100 |     100 |     100 |                   
+  categorias.ts    |     100 |      100 |     100 |     100 |                   
+  compras.ts       |     100 |      100 |     100 |     100 |                   
+  faqs.ts          |     100 |      100 |     100 |     100 |                   
+  pedidos.ts       |     100 |      100 |     100 |     100 |                   
+  productos.ts     |     100 |      100 |     100 |     100 |                   
+  stats.ts         |     100 |      100 |     100 |     100 |                   
+  testimonios.ts   |     100 |      100 |     100 |     100 |                   
+  usuarios.ts      |     100 |      100 |     100 |     100 |                   
+ services          |   97.85 |    94.87 |     100 |   97.85 |                   
+  admin.service.ts |     100 |      100 |     100 |     100 |                   
+  api.ts           |   90.62 |    66.66 |     100 |   90.62 | 29-31             
+  auth.service.ts  |     100 |      100 |     100 |     100 |                   
+  cart.service.ts  |     100 |      100 |     100 |     100 |                   
+  order.service.ts |     100 |      100 |     100 |     100 |                   
+  ...nt.service.ts |     100 |      100 |     100 |     100 |                   
+  ...ct.service.ts |     100 |      100 |     100 |     100 |                   
+  ...rt.service.ts |     100 |      100 |     100 |     100 |                   
+  user.service.ts  |     100 |      100 |     100 |     100 |                   
+ store             |   89.12 |    88.23 |     100 |   89.12 |                   
+  auth-store.ts    |     100 |    84.21 |     100 |     100 | 47,67,72          
+  cart-store.ts    |   81.69 |    86.27 |     100 |   81.69 | ...17-121,123-139 
+  ...ites-store.ts |     100 |      100 |     100 |     100 |                   
+  ui-store.ts      |     100 |      100 |     100 |     100 |                   
+ types             |       0 |        0 |       0 |       0 |                   
+  index.ts         |       0 |        0 |       0 |       0 |                   
+ utils             |     100 |      100 |     100 |     100 |                   
+  cn.ts            |     100 |      100 |     100 |     100 |                   
+  format.ts        |     100 |      100 |     100 |     100 |                   
+  validators.ts    |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 86.13% ( 5753/6679 )
+Branches     : 80.6% ( 615/763 )
+Functions    : 53.77% ( 221/411 )
+Lines        : 86.13% ( 5753/6679 )
+================================================================================

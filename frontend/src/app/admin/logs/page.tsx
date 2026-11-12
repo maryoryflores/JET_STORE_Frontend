@@ -1,7 +1,5 @@
-'use client';
+import LogsClient from './LogsClient';
 
-import LogsView from '@/components/admin/LogsView';
-
-export default function AdminLogsPage() {
-  return <LogsView />;
+export default function Page() {
+  return <LogsClient />;
 }

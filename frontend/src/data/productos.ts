@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Producto } from '@/types';
 
 export const productos: any[] = [
   {

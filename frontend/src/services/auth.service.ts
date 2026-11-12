@@ -30,8 +30,17 @@ export const authService = {
 
   logout: (token: string) =>
     api.post<ApiResponse<null>>('/usuario/cerrar-sesion', null, {
-      headers: { Authorization: token },
+      headers: { Authorization: `Bearer ${token}` },
     }),
+
+  solicitarRecuperacion: (correo: string) =>
+    api.post<ApiResponse<null>>('/usuario/recuperar', { correo }),
+
+  restablecerPassword: (data: {
+    token: string;
+    password: string;
+    confirmPassword: string;
+  }) => api.post<ApiResponse<null>>('/usuario/restablecer', data),
 
   listUsers: () =>
     api.get<ApiResponse<Array<{ id: number; nombreUsuario: string; correo: string; rol: string }>>>(

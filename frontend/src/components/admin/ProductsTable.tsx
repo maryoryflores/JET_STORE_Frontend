@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from 'react';
 import { adminService } from '@/services/admin.service';
 import { productService, LibroData } from '@/services/product.service';
+import { productos as mockProductos } from '@/data/productos';
 import Table from '@/components/ui/Table';
 import Badge from '@/components/ui/Badge';
 import Button from '@/components/ui/Button';
@@ -11,7 +12,7 @@ import Select from '@/components/ui/Select';
 import Modal from '@/components/ui/Modal';
 import { formatCurrency } from '@/utils/format';
 import { Producto } from '@/types';
-import { HiSearch, HiPlus, HiTrash, HiPencil, HiPhotograph } from 'react-icons/hi';
+import { HiSearch, HiPlus, HiTrash, HiPencil } from 'react-icons/hi';
 import Swal from 'sweetalert2';
 
 const emptyForm: LibroData = {
@@ -36,24 +37,66 @@ export default function ProductsTable() {
   const [addingStock, setAddingStock] = useState<Producto | null>(null);
   const [stockQty, setStockQty] = useState('1');
 
+  const loadAll = async () => {
+    try {
+      const [prodRes, catRes] = await Promise.all([
+        productService.getAll(),
+        adminService.getCategories(),
+      ]);
+      if (prodRes.data.ok) setProductos(prodRes.data.payload);
+      if (catRes.data.ok) setCategorias(catRes.data.payload);
+    } catch {
+      setProductos(
+        mockProductos.map((p) => ({
+          id: p.id,
+          titulo: p.titulo,
+          autor: p.autor,
+          categoria: p.categoria,
+          precio: p.precio,
+          formato: p.formato,
+          imagen: p.imagen,
+          stock: p.stock,
+          fechaCreacion: p.fechaPublicacion,
+        }))
+      );
+      setCategorias([...new Set(mockProductos.map((p) => p.categoria))]);
+    }
+  };
+
   useEffect(() => {
-    loadProducts();
-    loadCategories();
+    const controller = new AbortController();
+    const run = async () => {
+      try {
+        const [prodRes, catRes] = await Promise.all([
+          productService.getAll(),
+          adminService.getCategories(),
+        ]);
+        if (!controller.signal.aborted) {
+          if (prodRes.data.ok) setProductos(prodRes.data.payload);
+          if (catRes.data.ok) setCategorias(catRes.data.payload);
+        }
+      } catch {
+        if (!controller.signal.aborted) {
+          setProductos(
+            mockProductos.map((p) => ({
+              id: p.id,
+              titulo: p.titulo,
+              autor: p.autor,
+              categoria: p.categoria,
+              precio: p.precio,
+              formato: p.formato,
+              imagen: p.imagen,
+              stock: p.stock,
+              fechaCreacion: p.fechaPublicacion,
+            }))
+          );
+          setCategorias([...new Set(mockProductos.map((p) => p.categoria))]);
+        }
+      }
+    };
+    run();
+    return () => controller.abort();
   }, []);
-
-  const loadProducts = async () => {
-    try {
-      const res = await productService.getAll();
-      if (res.data.ok) setProductos(res.data.payload);
-    } catch { /* ignore */ }
-  };
-
-  const loadCategories = async () => {
-    try {
-      const res = await adminService.getCategories();
-      if (res.data.ok) setCategorias(res.data.payload);
-    } catch { /* ignore */ }
-  };
 
   const filtered = useMemo(() => {
     if (!search.trim()) return productos;
@@ -102,8 +145,7 @@ export default function ProductsTable() {
       };
       await adminService.saveProduct(data);
       setFormOpen(false);
-      loadProducts();
-      loadCategories();
+      loadAll();
       Swal.fire(
         editing ? 'Actualizado' : 'Creado',
         editing ? 'Libro actualizado correctamente.' : 'Libro creado correctamente.',

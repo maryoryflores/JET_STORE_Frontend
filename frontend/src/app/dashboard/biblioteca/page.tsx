@@ -1,7 +1,5 @@
-'use client';
+import BibliotecaClient from './BibliotecaClient';
 
-import DigitalLibrary from '@/components/dashboard/DigitalLibrary';
-
-export default function BibliotecaPage() {
-  return <DigitalLibrary />;
+export default function Page() {
+  return <BibliotecaClient />;
 }

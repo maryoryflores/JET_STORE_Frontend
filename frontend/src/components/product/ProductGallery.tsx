@@ -9,7 +9,7 @@ interface ProductGalleryProps {
 
 export default function ProductGallery({ images, title }: ProductGalleryProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [imgError, setImgError] = useState(false);
+  const [imgError] = useState(false);
   const hasImage = images.length > 0 && images[0] && !imgError;
 
   return (

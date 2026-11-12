@@ -1,7 +1,5 @@
-'use client';
+import PerfilClient from './PerfilClient';
 
-import ProfileForm from '@/components/dashboard/ProfileForm';
-
-export default function PerfilPage() {
-  return <ProfileForm />;
+export default function Page() {
+  return <PerfilClient />;
 }

@@ -6,8 +6,6 @@ import {
   profileSchema,
 } from '@/utils/validators';
 
-// Autor: Lorena (Frontend) — 10 pruebas unitarias sobre los validadores Zod.
-
 describe('loginSchema', () => {
   it('acepta credenciales válidas', () => {
     const resultado = loginSchema.safeParse({
@@ -30,6 +28,11 @@ describe('loginSchema', () => {
       nombreUsuario: 'daniel',
       password: '123',
     });
+    expect(resultado.success).toBe(false);
+  });
+
+  it('rechaza campos faltantes', () => {
+    const resultado = loginSchema.safeParse({});
     expect(resultado.success).toBe(false);
   });
 });
@@ -74,6 +77,16 @@ describe('registerSchema', () => {
     });
     expect(resultado.success).toBe(false);
   });
+
+  it('rechaza contraseña menor a 6 caracteres', () => {
+    const resultado = registerSchema.safeParse({
+      nombreUsuario: 'lorena',
+      correo: 'lorena@jetstore.pe',
+      password: '123',
+      confirmPassword: '123',
+    });
+    expect(resultado.success).toBe(false);
+  });
 });
 
 describe('checkoutSchema', () => {
@@ -108,6 +121,38 @@ describe('checkoutSchema', () => {
     });
     expect(resultado.success).toBe(false);
   });
+
+  it('rechaza telefono muy corto', () => {
+    const resultado = checkoutSchema.safeParse({
+      nombres: 'Maria',
+      apellidos: 'Lopez',
+      email: 'maria@jetstore.pe',
+      telefono: '123',
+      documento: '12345678',
+      tipoDocumento: 'DNI',
+      pais: 'Perú',
+      departamento: 'Lima',
+      ciudad: 'Lima',
+      direccion: 'Av. Principal 123',
+    });
+    expect(resultado.success).toBe(false);
+  });
+
+  it('acepta codigoPostal opcional', () => {
+    const resultado = checkoutSchema.safeParse({
+      nombres: 'Maria',
+      apellidos: 'Lopez',
+      email: 'maria@jetstore.pe',
+      telefono: '987654321',
+      documento: '12345678',
+      tipoDocumento: 'DNI',
+      pais: 'Perú',
+      departamento: 'Lima',
+      ciudad: 'Lima',
+      direccion: 'Av. Principal 123',
+    });
+    expect(resultado.success).toBe(true);
+  });
 });
 
 describe('profileSchema', () => {
@@ -115,6 +160,22 @@ describe('profileSchema', () => {
     const resultado = profileSchema.safeParse({
       nombreUsuario: 'daniel',
       correo: 'malcorreo',
+    });
+    expect(resultado.success).toBe(false);
+  });
+
+  it('acepta un perfil válido', () => {
+    const resultado = profileSchema.safeParse({
+      nombreUsuario: 'daniel',
+      correo: 'daniel@test.com',
+    });
+    expect(resultado.success).toBe(true);
+  });
+
+  it('rechaza nombre de usuario corto', () => {
+    const resultado = profileSchema.safeParse({
+      nombreUsuario: 'da',
+      correo: 'daniel@test.com',
     });
     expect(resultado.success).toBe(false);
   });

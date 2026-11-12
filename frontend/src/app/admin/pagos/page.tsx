@@ -1,7 +1,5 @@
-'use client';
+import PagosClient from './PagosClient';
 
-import PaymentsTable from '@/components/admin/PaymentsTable';
-
-export default function AdminPagosPage() {
-  return <PaymentsTable />;
+export default function Page() {
+  return <PagosClient />;
 }

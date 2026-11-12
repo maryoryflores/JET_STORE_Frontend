@@ -1,7 +1,5 @@
-'use client';
+import ProductosClient from './ProductosClient';
 
-import ProductsTable from '@/components/admin/ProductsTable';
-
-export default function AdminProductosPage() {
-  return <ProductsTable />;
+export default function Page() {
+  return <ProductosClient />;
 }

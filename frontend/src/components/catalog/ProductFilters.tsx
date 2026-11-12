@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { HiAdjustments, HiX, HiStar } from 'react-icons/hi';
+import { HiAdjustments, HiX } from 'react-icons/hi';
 import { cn } from '@/utils/cn';
 import Button from '@/components/ui/Button';
 import { Categoria } from '@/types';
@@ -13,8 +13,6 @@ interface ProductFiltersProps {
   maxPrice: string;
   onMinPriceChange: (value: string) => void;
   onMaxPriceChange: (value: string) => void;
-  minRating: number;
-  onRatingChange: (rating: number) => void;
   onClear: () => void;
   className?: string;
   categories?: Categoria[];
@@ -27,15 +25,13 @@ export default function ProductFilters({
   maxPrice,
   onMinPriceChange,
   onMaxPriceChange,
-  minRating,
-  onRatingChange,
   onClear,
   className,
   categories = [],
 }: ProductFiltersProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const hasActiveFilters = selectedCategories.length > 0 || minPrice || maxPrice || minRating > 0;
+  const hasActiveFilters = selectedCategories.length > 0 || minPrice || maxPrice;
 
   return (
     <>
@@ -114,29 +110,6 @@ export default function ProductFilters({
                 placeholder="Máx"
                 className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#DC2626] focus:border-transparent"
               />
-            </div>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-3">Valoración Mínima</h4>
-            <div className="flex items-center gap-1">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <button
-                  key={star}
-                  onClick={() => onRatingChange(minRating === star ? 0 : star)}
-                  className="p-1 transition-colors"
-                >
-                  <HiStar
-                    className={cn(
-                      'w-6 h-6 transition-colors',
-                      star <= minRating ? 'text-yellow-400' : 'text-gray-300 hover:text-yellow-300',
-                    )}
-                  />
-                </button>
-              ))}
-              {minRating > 0 && (
-                <span className="ml-2 text-xs text-gray-500">{minRating}+ estrellas</span>
-              )}
             </div>
           </div>
 

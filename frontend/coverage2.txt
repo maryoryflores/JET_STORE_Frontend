@@ -1,0 +1,508 @@
+The CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.
+
+[1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90mC:/Users/da123/Documents/jetstore/Frontend/frontend[39m
+      [2mCoverage enabled with [22m[33mv8[39m
+
+ [32mÔ£ô[39m src/utils/__tests__/format.test.ts [2m([22m[2m24 tests[22m[2m)[22m[90m 115[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/auth-store.test.ts [2m([22m[2m12 tests[22m[2m)[22m[90m 72[2mms[22m[39m
+ [32mÔ£ô[39m src/utils/__tests__/validators.test.ts [2m([22m[2m16 tests[22m[2m)[22m[90m 100[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/cart-store.test.ts [2m([22m[2m17 tests[22m[2m)[22m[90m 83[2mms[22m[39m
+ [32mÔ£ô[39m src/components/dashboard/__tests__/DigitalLibrary.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 173[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderSummary.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 307[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentYape.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 580[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/DashboardLayout.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 539[2mms[22m[39m
+stderr | src/components/product/__tests__/RelatedProducts.test.tsx > RelatedProducts > renders the section heading
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+stderr | src/components/catalog/__tests__/CatalogoView.test.tsx > CatalogoView > renders the catalog title
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/checkout/__tests__/CheckoutForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 830[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CheckoutForm[2m > [22mrenders the checkout form with all sections [33m420[2mms[22m[39m
+stderr | src/components/catalog/__tests__/CatalogoView.test.tsx > CatalogoView > shows loading spinner initially
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to CatalogoView inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/dashboard/__tests__/SettingsForm.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 1079[2mms[22m[39m
+stderr | src/components/dashboard/__tests__/FavoritesList.test.tsx > FavoritesList - Empty State > shows empty state when no favorites
+An update to FavoritesList inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentPlin.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1009[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m PaymentPlin[2m > [22mrenders the Plin payment form [33m408[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentTransfer.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[90m 71[2mms[22m[39m
+ [32mÔ£ô[39m src/components/dashboard/__tests__/FavoritesList.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 95[2mms[22m[39m
+ [32mÔ£ô[39m src/components/product/__tests__/RelatedProducts.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1094[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m RelatedProducts[2m > [22mrenders the section heading [33m476[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMastercard.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 690[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m PaymentMastercard[2m > [22mrenders the mastercard payment form [33m325[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductGrid.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 1127[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGrid[2m > [22mrenders product titles [33m424[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/CatalogoView.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1244[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CatalogoView[2m > [22mrenders the catalog title [33m439[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CatalogoView[2m > [22mrenders products after loading [33m390[2mms[22m[39m
+stderr | src/components/catalog/__tests__/ProductGrid.test.tsx > ProductGrid > renders product titles
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+
+ [32mÔ£ô[39m src/components/checkout/__tests__/OrderConfirmation.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 997[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m OrderConfirmation[2m > [22mrenders success message [33m444[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Toast.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[90m 110[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentVisa.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 78[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/FeaturedProducts.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 2460[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m FeaturedProducts[2m > [22mrenders the section heading after loading [33m715[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m FeaturedProducts[2m > [22mrenders category badges [33m300[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m FeaturedProducts[2m > [22mshows Sin Stock for out of stock products [33m377[2mms[22m[39m
+ [32mÔ£ô[39m src/components/product/__tests__/ProductInfo.test.tsx [2m([22m[2m13 tests[22m[2m)[22m[33m 3016[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductInfo[2m > [22mrenders the product title [33m465[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductInfo[2m > [22mincrements quantity when plus button is clicked [33m344[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductInfo[2m > [22mdecrements quantity when minus button is clicked [33m395[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductInfo[2m > [22mcalls agregar when add-to-cart is clicked [33m320[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/product.service.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 14[2mms[22m[39m
+stderr | src/components/catalog/__tests__/ProductFilters.test.tsx > ProductFilters > shows clear button when filters are active
+React does not recognize the `fullWidth` prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase `fullwidth` instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+ [32mÔ£ô[39m src/components/dashboard/__tests__/ProfileForm.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 147[2mms[22m[39m
+
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductFilters.test.tsx [2m([22m[2m10 tests[22m[2m)[22m[33m 3689[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductFilters[2m > [22mrenders category names [33m438[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductFilters[2m > [22mcalls onCategoryChange when a category checkbox is clicked [33m2133[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/pedidos.test.ts [2m([22m[2m10 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/api.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 68[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/admin.service.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 59[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/ui-store.test.ts [2m([22m[2m6 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+ [32mÔ£ô[39m src/components/checkout/__tests__/PaymentMethods.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 706[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/auth.service.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 50[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/cart.service.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 8[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Loader.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 305[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/ReportsView.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[90m 117[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Alert.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[90m 268[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Select.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[90m 280[2mms[22m[39m
+ [32mÔ£ô[39m src/store/__tests__/favorites-store.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Table.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 632[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Table[2m > [22mrenders column headers [33m381[2mms[22m[39m
+stderr | src/components/admin/__tests__/UsersTable.test.tsx > UsersTable > renders search input
+An update to UsersTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/ui/__tests__/Button.test.tsx [2m([22m[2m12 tests[22m[2m)[22m[33m 2644[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Button[2m > [22mrenders with text [33m1423[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Button[2m > [22mcalls onClick when clicked [33m341[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/UsersTable.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1031[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m UsersTable[2m > [22mrenders search input [33m400[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m UsersTable[2m > [22mrenders user data from service [33m440[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminSidebar.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 1510[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m AdminSidebar[2m > [22mrenders JetStore branding [33m582[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m AdminSidebar[2m > [22mrenders all navigation links [33m357[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Badge.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[90m 93[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Modal.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[33m 1598[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Modal[2m > [22mcalls onClose when close button is clicked [33m1415[2mms[22m[39m
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders search input
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders Nuevo Libro button
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+stderr | src/components/admin/__tests__/ProductsTable.test.tsx > ProductsTable > renders table with empty state message
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+An update to ProductsTable inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at https://react.dev/link/wrap-tests-with-act
+
+ [32mÔ£ô[39m src/components/admin/__tests__/ProductsTable.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1029[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductsTable[2m > [22mrenders search input [33m596[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/payment.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 5[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Sidebar.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 98[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/order.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/productos.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 9[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Card.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 80[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Spinner.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[90m 80[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Categories.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 445[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Input.test.tsx [2m([22m[2m8 tests[22m[2m)[22m[33m 3158[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Input[2m > [22mrenders input element [33m1738[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Input[2m > [22mpasses value and onChange [33m604[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/AdminHeader.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 2537[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m AdminHeader[2m > [22mrenders the title [33m558[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m AdminHeader[2m > [22mcalls onToggleSidebar when menu button is clicked [33m1536[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m AdminHeader[2m > [22mshows dropdown with user info on avatar click [33m360[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/CategoriesTable.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 833[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CategoriesTable[2m > [22mrenders category descriptions [33m383[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/compras.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Breadcrumb.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 328[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/stats.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/categorias.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Pagination.test.tsx [2m([22m[2m7 tests[22m[2m)[22m[33m 2528[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Pagination[2m > [22mcalls onPageChange when page is clicked [33m1735[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/OrdersTable.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1163[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m OrdersTable[2m > [22mfilters orders by search [33m948[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/Charts.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 361[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Benefits.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 165[2mms[22m[39m
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders brand name
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders quick links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders category links
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+stderr | src/components/layout/__tests__/Footer.test.tsx > Footer > renders copyright
+Encountered two children with the same key, `/contacto`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted ÔÇö the behavior is unsupported and could change in a future version.
+
+ [32mÔ£ô[39m src/components/layout/__tests__/Footer.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 920[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Footer[2m > [22mrenders quick links [33m312[2mms[22m[39m
+ [32mÔ£ô[39m src/components/dashboard/__tests__/PurchaseHistory.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1145[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m PurchaseHistory[2m > [22mrenders filter tabs [33m547[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m PurchaseHistory[2m > [22mrenders purchase data [33m322[2mms[22m[39m
+ [32mÔ£ô[39m src/components/product/__tests__/ProductGallery.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1231[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGallery[2m > [22mrenders image when provided [33m716[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m ProductGallery[2m > [22mrenders thumbnails for multiple images [33m443[2mms[22m[39m
+ [32mÔ£ô[39m src/components/cart/__tests__/CartSummary.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 868[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CartSummary[2m > [22mrenders subtotal [33m632[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Hero.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 760[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Hero[2m > [22mrenders heading [33m576[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/report.service.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/usuarios.test.ts [2m([22m[2m4 tests[22m[2m)[22m[90m 7[2mms[22m[39m
+ [32mÔ£ô[39m src/services/__tests__/user.service.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 11[2mms[22m[39m
+ [32mÔ£ô[39m src/utils/__tests__/cn.test.ts [2m([22m[2m5 tests[22m[2m)[22m[90m 3[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/faqs.test.ts [2m([22m[2m3 tests[22m[2m)[22m[90m 6[2mms[22m[39m
+ [32mÔ£ô[39m src/components/ui/__tests__/Textarea.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 1543[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m Textarea[2m > [22mrenders textarea element [33m1292[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/FAQ.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 166[2mms[22m[39m
+ [32mÔ£ô[39m src/components/cart/__tests__/CartItem.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 605[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m CartItem[2m > [22mrenders item title [33m424[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/HowItWorks.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 116[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/StatsCards.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 95[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/LogsView.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 602[2mms[22m[39m
+ [32mÔ£ô[39m src/data/__tests__/testimonios.test.ts [2m([22m[2m2 tests[22m[2m)[22m[90m 4[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/SearchBar.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[33m 1065[2mms[22m[39m
+   [33m[2mÔ£ô[22m[39m SearchBar[2m > [22mrenders input [33m1037[2mms[22m[39m
+stderr | src/components/layout/__tests__/Navbar.test.tsx > Navbar > renders brand name
+Received `true` for a non-boolean attribute `priority`.
+
+If you want to write it to the DOM, pass a string instead: priority="true" or priority={value.toString()}.
+
+ [32mÔ£ô[39m src/components/home/__tests__/Newsletter.test.tsx [2m([22m[2m3 tests[22m[2m)[22m[90m 274[2mms[22m[39m
+ [32mÔ£ô[39m src/components/layout/__tests__/Navbar.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 277[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Testimonials.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[90m 101[2mms[22m[39m
+ [32mÔ£ô[39m src/components/home/__tests__/Stats.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 51[2mms[22m[39m
+ [32mÔ£ô[39m src/components/admin/__tests__/PaymentsTable.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 57[2mms[22m[39m
+ [32mÔ£ô[39m src/components/catalog/__tests__/ProductSort.test.tsx [2m([22m[2m1 test[22m[2m)[22m[90m 150[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m86 passed[39m[22m[90m (86)[39m
+[2m      Tests [22m [1m[32m463 passed[39m[22m[90m (463)[39m
+[2m   Start at [22m 16:27:39
+[2m   Duration [22m 23.52s[2m (transform 20.34s, setup 34.18s, collect 72.58s, tests 52.03s, environment 144.28s, prepare 17.50s)[22m
+
+[34m % [39m[2mCoverage report from [22m[33mv8[39m
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   71.31 |     75.3 |   47.13 |   71.31 |                   
+ app               |       0 |        0 |       0 |       0 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-25              
+ app/admin         |       0 |        0 |       0 |       0 |                   
+  AdminClient.tsx  |       0 |        0 |       0 |       0 | 1-75              
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-33              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...min/categorias |       0 |        0 |       0 |       0 |                   
+  ...iasClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |       0 |        0 |       0 |       0 |                   
+  ...figClient.tsx |       0 |        0 |       0 |       0 | 1-92              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/logs    |       0 |        0 |       0 |       0 |                   
+  LogsClient.tsx   |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pagos   |       0 |        0 |       0 |       0 |                   
+  PagosClient.tsx  |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/admin/pedidos |       0 |        0 |       0 |       0 |                   
+  ...dosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...dmin/productos |       0 |        0 |       0 |       0 |                   
+  ...tosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/reportes |       0 |        0 |       0 |       0 |                   
+  ...tesClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...admin/usuarios |       0 |        0 |       0 |       0 |                   
+  ...iosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/carrito       |       0 |        0 |       0 |       0 |                   
+  ...itoClient.tsx |       0 |        0 |       0 |       0 | 1-94              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/catalogo      |       0 |        0 |       0 |       0 |                   
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/checkout      |       0 |        0 |       0 |       0 |                   
+  ...outClient.tsx |       0 |        0 |       0 |       0 | 1-216             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...eckout/success |       0 |        0 |       0 |       0 |                   
+  ...essClient.tsx |       0 |        0 |       0 |       0 | 1-62              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/contacto      |       0 |        0 |       0 |       0 |                   
+  ...ctoClient.tsx |       0 |        0 |       0 |       0 | 1-86              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/dashboard     |       0 |        0 |       0 |       0 |                   
+  ...ardClient.tsx |       0 |        0 |       0 |       0 | 1-46              
+  layout.tsx       |       0 |        0 |       0 |       0 | 1-18              
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...ard/biblioteca |       0 |        0 |       0 |       0 |                   
+  ...ecaClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...hboard/compras |       0 |        0 |       0 |       0 |                   
+  ...rasClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ .../configuracion |       0 |        0 |       0 |       0 |                   
+  ...ionClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...oard/favoritos |       0 |        0 |       0 |       0 |                   
+  ...tosClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ ...shboard/perfil |       0 |        0 |       0 |       0 |                   
+  PerfilClient.tsx |       0 |        0 |       0 |       0 | 1-7               
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/login         |       0 |        0 |       0 |       0 |                   
+  LoginClient.tsx  |       0 |        0 |       0 |       0 | 1-166             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/producto/[id] |       0 |        0 |       0 |       0 |                   
+  ...ctoClient.tsx |       0 |        0 |       0 |       0 | 1-106             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ app/registro      |       0 |        0 |       0 |       0 |                   
+  ...troClient.tsx |       0 |        0 |       0 |       0 | 1-154             
+  page.tsx         |       0 |        0 |       0 |       0 | 1-5               
+ components/admin  |   79.65 |    77.65 |      45 |   79.65 |                   
+  AdminHeader.tsx  |     100 |     87.5 |      75 |     100 | 54                
+  AdminSidebar.tsx |     100 |      100 |     100 |     100 |                   
+  ...riesTable.tsx |   92.59 |     37.5 |      25 |   92.59 | 39-42             
+  Charts.tsx       |     100 |      100 |     100 |     100 |                   
+  LogsView.tsx     |   81.01 |    57.14 |      50 |   81.01 | 35-43,45-46,48-51 
+  OrdersTable.tsx  |   94.73 |    91.66 |   77.77 |   94.73 | 42-45             
+  ...entsTable.tsx |     100 |    83.33 |     100 |     100 | 29                
+  ...uctsTable.tsx |   57.87 |    38.46 |    6.89 |   57.87 | ...16-218,225-241 
+  ReportsView.tsx  |     100 |      100 |      75 |     100 |                   
+  StatsCards.tsx   |     100 |      100 |     100 |     100 |                   
+  UsersTable.tsx   |      75 |    84.61 |   83.33 |      75 | 28-36,43-48       
+ components/cart   |     100 |      100 |   33.33 |     100 |                   
+  CartItem.tsx     |     100 |      100 |      25 |     100 |                   
+  CartSummary.tsx  |     100 |      100 |      50 |     100 |                   
+ ...onents/catalog |   77.87 |    69.81 |   32.14 |   77.87 |                   
+  CatalogoView.tsx |   63.91 |    54.54 |   16.66 |   63.91 | ...15-117,201-229 
+  ...ctFilters.tsx |     100 |    81.81 |   57.14 |     100 | 55-63             
+  ProductGrid.tsx  |   81.31 |    76.92 |      25 |   81.31 | 29-44,68          
+  ProductSort.tsx  |     100 |      100 |      50 |     100 |                   
+  SearchBar.tsx    |    73.8 |       80 |   33.33 |    73.8 | 25-31,34-37       
+ ...nents/checkout |   86.68 |    45.65 |   29.16 |   86.68 |                   
+  CheckoutForm.tsx |     100 |     8.33 |     100 |     100 | 39-114            
+  ...firmation.tsx |     100 |       50 |      50 |     100 | 72                
+  OrderSummary.tsx |     100 |       80 |     100 |     100 | 61                
+  ...astercard.tsx |    86.3 |       50 |   14.28 |    86.3 | ...27-29,32-34,44 
+  ...ntMethods.tsx |   98.07 |     87.5 |     100 |   98.07 | 52                
+  ...entPayPal.tsx |       0 |        0 |       0 |       0 | 1-44              
+  PaymentPlin.tsx  |    84.7 |       40 |    12.5 |    84.7 | 22-25,28-32,94-97 
+  ...tTransfer.tsx |   83.75 |       50 |   14.28 |   83.75 | 20-23,26-30,86-89 
+  PaymentVisa.tsx  |    86.3 |       50 |   14.28 |    86.3 | ...27-29,32-34,44 
+  PaymentYape.tsx  |    84.7 |       40 |    12.5 |    84.7 | 22-25,28-32,94-97 
+ ...ents/dashboard |   81.04 |       74 |    37.5 |   81.04 |                   
+  ...alLibrary.tsx |   76.27 |       75 |   33.33 |   76.27 | 32-35,39-49       
+  ...ritesList.tsx |   90.78 |       90 |   33.33 |   90.78 | 25,51-56          
+  ProfileForm.tsx  |   81.63 |       20 |   33.33 |   81.63 | 34-42             
+  ...seHistory.tsx |   76.42 |    70.58 |   63.63 |   76.42 | ...,44-47,125-147 
+  SettingsForm.tsx |   81.73 |      100 |   11.11 |   81.73 | ...,37-41,114-117 
+ components/home   |   87.24 |       80 |   58.62 |   87.24 |                   
+  Benefits.tsx     |     100 |      100 |     100 |     100 |                   
+  Categories.tsx   |     100 |       75 |     100 |     100 | 42                
+  FAQ.tsx          |   84.61 |       75 |   66.66 |   84.61 | 26-36             
+  ...dProducts.tsx |   80.25 |    68.42 |      50 |   80.25 | 51-66,92,145-158  
+  Hero.tsx         |     100 |      100 |     100 |     100 |                   
+  HowItWorks.tsx   |     100 |      100 |     100 |     100 |                   
+  Newsletter.tsx   |    62.9 |       50 |   33.33 |    62.9 | 13-35             
+  Stats.tsx        |   88.13 |    83.33 |     100 |   88.13 | 38-44             
+  Testimonials.tsx |   83.33 |      100 |   28.57 |   83.33 | ...,48-53,112-117 
+ components/layout |   56.37 |    69.44 |      20 |   56.37 |                   
+  ...ardLayout.tsx |   58.76 |     87.5 |      25 |   58.76 | 69-112            
+  Footer.tsx       |     100 |      100 |     100 |     100 |                   
+  Navbar.tsx       |   30.45 |    46.15 |    7.14 |   30.45 | ...62-169,185-273 
+  Sidebar.tsx      |   73.97 |    72.72 |     100 |   73.97 | 40-42,56,81-97    
+ ...onents/product |   80.18 |    86.11 |   63.63 |   80.18 |                   
+  ...ctGallery.tsx |     100 |      100 |      50 |     100 |                   
+  ProductInfo.tsx  |   87.85 |    82.35 |      80 |   87.85 | 30-42             
+  ...dProducts.tsx |   63.52 |    77.77 |      50 |   63.52 | 35-51,57-70       
+ components/ui     |     100 |      100 |   84.61 |     100 |                   
+  Alert.tsx        |     100 |      100 |     100 |     100 |                   
+  Badge.tsx        |     100 |      100 |     100 |     100 |                   
+  Breadcrumb.tsx   |     100 |      100 |     100 |     100 |                   
+  Button.tsx       |     100 |      100 |     100 |     100 |                   
+  Card.tsx         |     100 |      100 |     100 |     100 |                   
+  Input.tsx        |     100 |      100 |     100 |     100 |                   
+  Loader.tsx       |     100 |      100 |     100 |     100 |                   
+  Modal.tsx        |     100 |      100 |     100 |     100 |                   
+  Pagination.tsx   |     100 |      100 |      50 |     100 |                   
+  Select.tsx       |     100 |      100 |     100 |     100 |                   
+  Spinner.tsx      |     100 |      100 |     100 |     100 |                   
+  Table.tsx        |     100 |      100 |     100 |     100 |                   
+  Textarea.tsx     |     100 |      100 |     100 |     100 |                   
+  Toast.tsx        |     100 |      100 |     100 |     100 |                   
+ data              |     100 |      100 |     100 |     100 |                   
+  categorias.ts    |     100 |      100 |     100 |     100 |                   
+  compras.ts       |     100 |      100 |     100 |     100 |                   
+  faqs.ts          |     100 |      100 |     100 |     100 |                   
+  pedidos.ts       |     100 |      100 |     100 |     100 |                   
+  productos.ts     |     100 |      100 |     100 |     100 |                   
+  stats.ts         |     100 |      100 |     100 |     100 |                   
+  testimonios.ts   |     100 |      100 |     100 |     100 |                   
+  usuarios.ts      |     100 |      100 |     100 |     100 |                   
+ services          |   97.85 |    94.87 |     100 |   97.85 |                   
+  admin.service.ts |     100 |      100 |     100 |     100 |                   
+  api.ts           |   90.62 |    66.66 |     100 |   90.62 | 29-31             
+  auth.service.ts  |     100 |      100 |     100 |     100 |                   
+  cart.service.ts  |     100 |      100 |     100 |     100 |                   
+  order.service.ts |     100 |      100 |     100 |     100 |                   
+  ...nt.service.ts |     100 |      100 |     100 |     100 |                   
+  ...ct.service.ts |     100 |      100 |     100 |     100 |                   
+  ...rt.service.ts |     100 |      100 |     100 |     100 |                   
+  user.service.ts  |     100 |      100 |     100 |     100 |                   
+ store             |   89.12 |    88.23 |     100 |   89.12 |                   
+  auth-store.ts    |     100 |    84.21 |     100 |     100 | 47,67,72          
+  cart-store.ts    |   81.69 |    86.27 |     100 |   81.69 | ...17-121,123-139 
+  ...ites-store.ts |     100 |      100 |     100 |     100 |                   
+  ui-store.ts      |     100 |      100 |     100 |     100 |                   
+ types             |       0 |        0 |       0 |       0 |                   
+  index.ts         |       0 |        0 |       0 |       0 |                   
+ utils             |     100 |      100 |     100 |     100 |                   
+  cn.ts            |     100 |      100 |     100 |     100 |                   
+  format.ts        |     100 |      100 |     100 |     100 |                   
+  validators.ts    |     100 |      100 |     100 |     100 |                   
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 71.31% ( 4779/6701 )
+Branches     : 75.3% ( 494/656 )
+Functions    : 47.13% ( 181/384 )
+Lines        : 71.31% ( 4779/6701 )
+================================================================================

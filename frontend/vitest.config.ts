@@ -10,10 +10,10 @@ export default defineConfig({
   test: {
     environment: 'jsdom',
     globals: true,
-    setupFiles: ['./src/test/setup.ts'],
+    setupFiles: ['./src/test/setup.tsx'],
     include: ['src/**/*.{test,spec}.{ts,tsx}'],
     coverage: {
-      provider: 'istanbul',
+      provider: 'v8',
       reporter: ['text', 'text-summary'],
       include: ['src/**/*.{ts,tsx}'],
       exclude: ['src/**/__tests__/**', 'src/test/**', 'src/**/*.d.ts', 'src/app/layout.tsx', 'src/app/globals.css'],

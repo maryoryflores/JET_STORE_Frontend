@@ -1,5 +1,3 @@
-import api from './api';
-
 export const reportService = {
   getSalesReport: () =>
     Promise.resolve({ data: { ok: true, mensaje: 'ok', payload: [] } }),

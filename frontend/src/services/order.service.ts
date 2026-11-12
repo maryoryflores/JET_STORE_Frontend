@@ -1,5 +1,4 @@
 import api from './api';
-import { Producto } from '@/types';
 
 interface ApiResponse<T> {
   ok: boolean;

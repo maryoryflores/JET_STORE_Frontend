@@ -9,6 +9,7 @@ import Button from '@/components/ui/Button';
 import { HiHeart, HiShoppingCart, HiTrash } from 'react-icons/hi';
 import { productService } from '@/services/product.service';
 import { Producto } from '@/types';
+import { productos as mockProductos } from '@/data/productos';
 import Swal from 'sweetalert2';
 
 export default function FavoritesList() {
@@ -23,7 +24,19 @@ export default function FavoritesList() {
         const res = await productService.getAll();
         if (res.data.ok) setAllProducts(res.data.payload);
       } catch {
-        // ignore
+        setAllProducts(
+          mockProductos.map((p) => ({
+            id: p.id,
+            titulo: p.titulo,
+            autor: p.autor,
+            categoria: p.categoria,
+            precio: p.precio,
+            formato: p.formato,
+            imagen: p.imagen,
+            stock: p.stock,
+            fechaCreacion: p.fechaPublicacion,
+          }))
+        );
       }
     };
     load();

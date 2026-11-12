@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { HiTrash, HiMinus, HiPlus, HiPhotograph } from 'react-icons/hi';
+import { HiTrash, HiMinus, HiPlus } from 'react-icons/hi';
 import { CarritoItem } from '@/types';
 import { formatCurrency } from '@/utils/format';
 import { useCartStore } from '@/store/cart-store';

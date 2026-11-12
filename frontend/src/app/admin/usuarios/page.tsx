@@ -1,7 +1,5 @@
-'use client';
+import UsuariosClient from './UsuariosClient';
 
-import UsersTable from '@/components/admin/UsersTable';
-
-export default function AdminUsuariosPage() {
-  return <UsersTable />;
+export default function Page() {
+  return <UsuariosClient />;
 }

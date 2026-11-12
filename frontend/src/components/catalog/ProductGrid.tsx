@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { HiHeart, HiShoppingCart, HiPhotograph, HiStar } from 'react-icons/hi';
 import { Producto } from '@/types';
@@ -22,6 +23,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
   const toggle = useFavoritesStore((s) => s.toggle);
   const isFavorite = useFavoritesStore((s) => s.isFavorite);
   const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
 
   const handleAddToCart = (producto: Producto) => {
     if (!isAuthenticated) {
@@ -33,7 +35,7 @@ export default function ProductGrid({ products }: ProductGridProps) {
         confirmButtonText: 'Ir a Login',
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = '/login';
+          router.push('/login');
         }
       });
       return;

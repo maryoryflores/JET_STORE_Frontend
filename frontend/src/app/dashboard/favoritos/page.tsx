@@ -1,7 +1,5 @@
-'use client';
+import FavoritosClient from './FavoritosClient';
 
-import FavoritesList from '@/components/dashboard/FavoritesList';
-
-export default function FavoritosPage() {
-  return <FavoritesList />;
+export default function Page() {
+  return <FavoritosClient />;
 }

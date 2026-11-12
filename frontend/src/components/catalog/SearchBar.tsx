@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, ChangeEvent } from 'react';
+import { useState, useRef, useEffect, ChangeEvent } from 'react';
 import { HiSearch, HiX } from 'react-icons/hi';
 import { cn } from '@/utils/cn';
 
@@ -14,6 +14,12 @@ interface SearchBarProps {
 export default function SearchBar({ value, onChange, placeholder = 'Buscar productos...', className }: SearchBarProps) {
   const [localValue, setLocalValue] = useState(value);
   const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) clearTimeout(debounceRef.current);
+    };
+  }, []);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newValue = e.target.value;

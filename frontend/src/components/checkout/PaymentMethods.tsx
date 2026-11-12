@@ -9,6 +9,12 @@ interface PaymentMethodsProps {
 }
 
 const methods = [
+  { id: 'mercadopago', label: 'Mercado Pago', icon: () => (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none">
+      <rect x="2" y="4" width="20" height="16" rx="3" fill="#00B1EA" />
+      <text x="12" y="14" textAnchor="middle" fontSize="6" fill="white" fontWeight="bold">MP</text>
+    </svg>
+  )},
   { id: 'visa', label: 'Visa', icon: HiCreditCard },
   { id: 'mastercard', label: 'Mastercard', icon: HiCreditCard },
   { id: 'yape', label: 'Yape', icon: () => (

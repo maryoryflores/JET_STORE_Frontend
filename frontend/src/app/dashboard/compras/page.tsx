@@ -1,7 +1,5 @@
-'use client';
+import ComprasClient from './ComprasClient';
 
-import PurchaseHistory from '@/components/dashboard/PurchaseHistory';
-
-export default function ComprasPage() {
-  return <PurchaseHistory />;
+export default function Page() {
+  return <ComprasClient />;
 }

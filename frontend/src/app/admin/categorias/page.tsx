@@ -1,7 +1,5 @@
-'use client';
+import CategoriasClient from './CategoriasClient';
 
-import CategoriesTable from '@/components/admin/CategoriesTable';
-
-export default function AdminCategoriasPage() {
-  return <CategoriesTable />;
+export default function Page() {
+  return <CategoriasClient />;
 }

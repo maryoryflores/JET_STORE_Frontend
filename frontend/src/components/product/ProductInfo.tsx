@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { HiHeart, HiShoppingCart, HiStar, HiMinus, HiPlus } from 'react-icons/hi';
 import { Producto } from '@/types';
 import { cn } from '@/utils/cn';
@@ -22,6 +23,7 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
   const toggle = useFavoritesStore((s) => s.toggle);
   const isFavorite = useFavoritesStore((s) => s.isFavorite);
   const { isAuthenticated } = useAuthStore();
+  const router = useRouter();
 
   const handleAddToCart = () => {
     if (!isAuthenticated) {
@@ -33,7 +35,7 @@ export default function ProductInfo({ producto }: ProductInfoProps) {
         confirmButtonText: 'Ir a Login',
       }).then((result) => {
         if (result.isConfirmed) {
-          window.location.href = '/login';
+          router.push('/login');
         }
       });
       return;
